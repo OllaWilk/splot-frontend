@@ -3,7 +3,7 @@ import React from 'react';
 import logo from './logo.svg';
 import { TestInterface } from 'types';
 
-import './App.css';
+import './App.scss';
 
 function App() {
   const foo: TestInterface = {

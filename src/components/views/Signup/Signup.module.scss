@@ -1,47 +1,62 @@
 @import '../../../styles/mixins.scss';
 
 .signup {
-  width: 80%;
   max-width: 1400px;
   margin: 0 auto;
   min-height: calc(100vh - 60px);
   @include flex(row, center, space-between);
-  gap: 20px;
+  padding: 20px;
 
   @include lg-max {
     flex-direction: column-reverse;
-    justify-content: center;
   }
 
   @include sm-max {
-    width: 95%;
+    padding: 10px;
   }
 
   form {
-    padding: 90px 50px;
-    @include flex(column, stretch, flex-start);
-    width: 45%;
     background-color: darken($color: #5955b3, $amount: 5);
-    border-radius: 30px;
-    gap: 25px;
+    padding: 90px 50px;
+    @include flex(column, center, center);
+    border-radius: 20px;
+    flex: 0.8;
 
     @include lg-max {
-      width: 100%;
-      padding: 40px 30px;
-      margin-bottom: 20px;
+      width: 80%;
+      padding: 90px 30px;
     }
 
-    @include sm-max {
-      padding: 40px 20px;
+    @include md-max {
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    @include mini {
+      padding: 0;
+    }
+
+    div:first-child {
+      margin-bottom: 40px;
+    }
+
+    div:nth-child(3) {
+      margin: 20px 0 40px 0;
+    }
+
+    button {
+      width: 100%;
+      margin-bottom: 20px;
     }
   }
 
   .inputWrapper {
     position: relative;
+    width: 100%;
 
     input {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       border: 1px solid var(--color-dark-grey);
       border-radius: 4px;
       outline: none;
@@ -65,6 +80,8 @@
   }
 
   .error {
-    text-align: justify;
+    text-align: left;
+    font-weight: bold;
+    font-size: 0.9rem;
   }
 }

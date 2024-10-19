@@ -13,12 +13,10 @@ import {
 import styles from './Login.module.scss';
 
 export const Login = () => {
-  const formValues: UserEntityForm = {
+  const [data, setData] = useState<UserEntityForm>({
     email: '',
     password: '',
-  };
-
-  const [data, setData] = useState(formValues);
+  });
   const { auth, error, isLoading } = useUserAuth();
   const [isToggled, toggle] = useToggle(true);
 
@@ -33,7 +31,6 @@ export const Login = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     await auth(data.email, data.password, 'login');
   };
 
@@ -41,7 +38,7 @@ export const Login = () => {
     <>
       <section className={styles.login}>
         <form onSubmit={handleSubmit}>
-          <Logo text={'SpaceSteps'} />
+          <Logo />
           <div className={styles.inputWrapper}>
             <input
               type='email'

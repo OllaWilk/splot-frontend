@@ -10,14 +10,14 @@ interface Props {
 
 const Logo = ({
   text = 'SplotApp',
-  fontSize = '50px',
+  // fontSize = '50px',
   slogan = true,
 }: Props) => (
   <div className={styles.logo}>
     <img src={logo} alt='logo' className={styles.logoImage} />
     {text && (
       <div className={styles.textWrapper}>
-        <h1 style={{ fontSize: `${fontSize}` }}>{text}</h1>
+        <h1>{text}</h1>
         {slogan && <p>Take control of your universe</p>}
       </div>
     )}

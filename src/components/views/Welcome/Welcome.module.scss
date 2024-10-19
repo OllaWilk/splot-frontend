@@ -6,7 +6,6 @@
   margin: 0 auto;
   min-height: calc(100vh - 60px);
   @include flex(row, center, space-between);
-  gap: 40px;
 
   @include lg-max {
     flex-direction: column-reverse;
@@ -16,7 +15,7 @@
 
   article {
     @include flex(column, flex-start, center);
-    flex: 1;
+    flex: 0.8;
     gap: 30px;
   }
 

@@ -13,11 +13,23 @@
     height: 100%;
     max-height: 100px;
     margin-right: 1rem;
+
+    @include sm-max {
+      margin-right: 0;
+    }
+
+    @include mini {
+      max-height: 80px;
+    }
   }
 
   .textWrapper {
     @include flex(column, stretch, space-between);
     text-align: left;
+
+    @include sm-max {
+      text-align: center;
+    }
 
     h1,
     p {
@@ -25,12 +37,24 @@
     }
 
     h1 {
-      font-size: inherit;
+      font-size: 50px;
+
+      @include sm-max {
+        font-size: 45px;
+      }
+
+      @include mini {
+        font-size: 30px;
+      }
     }
 
     p {
       font-size: 1rem;
       opacity: 0.8;
+
+      @include mini {
+        font-size: 0.8;
+      }
     }
   }
 }

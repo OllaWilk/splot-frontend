@@ -6,8 +6,8 @@
   width: 250px;
   height: 100vh;
   background-color: var(--color-dark);
-  transition: transform 0.3s ease-in-out;
   padding: 17px 0;
+  transition: transform 0.3s ease-in-out;
   @include flex(column, center, flex-start);
   z-index: 999;
 
@@ -39,18 +39,17 @@
 
 .toggleButton {
   display: none;
-  border: none;
   position: absolute;
+  border: none;
   top: -35px;
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--color-dark);
   color: var(--color-light);
   font-size: 2rem;
-
-  cursor: pointer;
-  border-radius: 20px 20px 0 0;
   padding: 10px;
+  border-radius: 20px 20px 0 0;
+  cursor: pointer;
 
   @include md-max {
     display: block;
@@ -81,14 +80,17 @@
   flex: 1;
   margin-left: 250px;
   width: calc(100vw - 267px);
-  right: 0;
   padding: 17px 17px 0 17px;
   color: var(--color-dark);
 
   @include lg-max {
     margin-left: 0;
     width: 100%;
-    padding: 97px 17px 0 17px;
+    padding-top: 97px;
+  }
+
+  @include md-max {
+    padding-top: 17px;
   }
 }
 

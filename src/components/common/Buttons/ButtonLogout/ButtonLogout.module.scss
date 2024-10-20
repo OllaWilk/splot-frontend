@@ -9,6 +9,11 @@
   transition: 0.3s ease-in-out;
   cursor: pointer;
 
+  @include lg-max {
+    width: auto;
+    padding: 0 10px;
+  }
+
   &:hover {
     color: var(--color-main);
     background-color: lighten($color: #080808, $amount: 5);
@@ -16,5 +21,15 @@
 
   svg {
     font-size: 1.2rem;
+  }
+
+  p {
+    @include lg-max {
+      display: none;
+    }
+
+    @include md-max {
+      display: block;
+    }
   }
 }

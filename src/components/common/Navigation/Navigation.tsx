@@ -17,10 +17,16 @@ const Navigation = () => {
   return (
     <nav className={style.component}>
       {navigation.map((item) => (
-        <div key={item.name} className={style.navLink}>
+        <NavLink
+          key={item.name}
+          className={({ isActive }) =>
+            isActive ? `${style.navLink} ${style.active}` : style.navLink
+          }
+          to={`/${item.path}`}
+        >
           <div className={style.mark}>{item.icon}</div>
-          <NavLink to={`/${item.path}`}>{item.name}</NavLink>
-        </div>
+          <span>{item.name}</span>
+        </NavLink>
       ))}
     </nav>
   );

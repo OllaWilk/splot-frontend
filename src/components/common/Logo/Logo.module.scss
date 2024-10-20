@@ -14,6 +14,15 @@
     max-height: 100px;
     margin-right: 1rem;
 
+    @include lg-max {
+      max-height: 50px;
+      margin-right: 0.5rem;
+    }
+    @include md-max {
+      max-height: 100px;
+      margin-right: 1rem;
+    }
+
     @include sm-max {
       margin-right: 0;
     }

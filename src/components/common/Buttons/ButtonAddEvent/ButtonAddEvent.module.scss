@@ -1,0 +1,15 @@
+@import '../../../../styles//mixins.scss';
+
+.addEvent {
+  @include btn;
+  border: 1px dashed var(--color-main);
+  border-radius: 12px;
+  background-color: transparent;
+  color: var(--color-main);
+  padding: 20px;
+  max-height: 73px;
+
+  &:hover {
+    color: var(--color-dark);
+  }
+}

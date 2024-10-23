@@ -1,8 +1,11 @@
 @import '../../../styles/mixins.scss';
 
 .buttonsWrap {
-  @include flex(row, stretch, space-between);
+  @include flex(row, center, space-between);
   flex-wrap: wrap;
+  width: 100%;
+  padding: 17px;
+  z-index: 777;
 
   @include lg-max {
     align-items: center;

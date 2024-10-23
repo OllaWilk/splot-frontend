@@ -3,17 +3,12 @@
 .sectionHeader {
   text-transform: uppercase;
   width: 100%;
-
   padding: 17px;
   border-bottom: 1px var(--color-grey) solid;
   @include flex(row, center, space-between);
 
   @include md-max {
     text-align: center;
-  }
-
-  @include sm-max {
-    padding: 17px 0px;
   }
 
   h2 {

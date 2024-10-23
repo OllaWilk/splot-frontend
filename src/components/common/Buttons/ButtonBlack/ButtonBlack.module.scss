@@ -4,6 +4,8 @@
   @include btn;
   background-color: var(--color-dark);
   color: var(--color-light);
+  width: 100%;
+  border-radius: 0px;
 
   &:hover {
     background: var(--color-danger);

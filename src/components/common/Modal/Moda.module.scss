@@ -1,0 +1,51 @@
+@import '../../../styles/mixins.scss';
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  @include flex(row, center, center);
+}
+
+.popupContent {
+  background-color: var(--color-light);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+
+  @include md-max {
+    width: 95%;
+  }
+}
+
+.close {
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: var(--transition);
+
+  &:hover {
+    color: var(--color-main);
+  }
+}
+
+.controlPanel {
+  transition: transform 0.3s ease-in-out;
+  z-index: 888;
+  background-color: var(--color-light);
+}
+
+.no-scroll {
+  overflow: hidden;
+}

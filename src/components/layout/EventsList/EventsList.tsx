@@ -2,11 +2,15 @@ import React, { useContext, useEffect } from 'react';
 import { EventEntity } from '@alexwilk/spacesteps-types';
 import { useEventFetch, useEventsContext } from '../../../utils/hooks';
 import { SearchContext } from '../../../context/search';
-import { NoDataAlert, Spiner, Event } from '../../common';
+import { NoDataAlert, Spiner, Event, ButtonAddEvent } from '../../common';
 import styles from './EventsList.module.scss';
 
+type Props = {
+  toggleIsOpen: () => void;
+};
+
 // The EventsList component fetches and displays a list of events
-export const EventsList = () => {
+export const EventsList = ({ toggleIsOpen }: Props) => {
   // Destructure state to get the list of events from the events context
   const {
     state: { events },
@@ -27,9 +31,20 @@ export const EventsList = () => {
   }, [getEvents, search, order]); // Dependencies for the effect
 
   if (!events) {
-    return <NoDataAlert message='No events to display' />; // If events is undefined, show a no data alert
+    return (
+      <>
+        <ButtonAddEvent toggleIsOpen={toggleIsOpen} />
+        <NoDataAlert message='No events to display' />; // If events is
+        undefined, show a no data alert
+      </>
+    );
   } else if (events.length === 0) {
-    return <Spiner />; // If events array is empty, show a spinner
+    return (
+      <div className={styles.noTasks}>
+        <ButtonAddEvent toggleIsOpen={toggleIsOpen} />
+        <Spiner />
+      </div>
+    );
   } else if (events === null) {
     return <NoDataAlert message='Event not found' />; // If events is null, show a different no data alert
   }
@@ -37,6 +52,7 @@ export const EventsList = () => {
   // Render the list of events
   return (
     <div className={styles.tasksList}>
+      <ButtonAddEvent toggleIsOpen={toggleIsOpen} />
       {events.map(
         ({
           id,

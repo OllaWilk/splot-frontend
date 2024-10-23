@@ -6,13 +6,16 @@
   grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
   grid-gap: 17px;
   z-index: 1;
-  position: relative;
+  padding: 0 17px 17px 17px;
 
   @include md-max {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    @include flex(column, stretch, center);
+    padding: 0 15px 15px 15px;
   }
+}
 
-  @include sm-max {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
+.noTasks {
+  display: flex;
+  flex-direction: column;
+  padding: 0 17px 17px 17px;
 }

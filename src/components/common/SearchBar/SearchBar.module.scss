@@ -1,20 +1,19 @@
 @import '../../../styles/mixins.scss';
 
 .component {
+  margin: 20px 0 0 0;
   @include flex(row, center, space-between);
   flex-wrap: wrap;
   width: 100%;
-
-  @include xl-min {
-    width: calc(100% - 270px);
-  }
+  padding: 0 17px;
 
   input {
     background: var(--color-light);
-    border: 1px solid var(--color-light-purple);
+    border: 1px solid var(--color-grey);
     padding: 1rem 1.5rem;
     font-family: var(--font-text);
-    border-radius: var(--radius);
+    border-radius: 12px;
     width: calc(100% - 60px);
+    transition: all 0.3s ease-in-out;
   }
 }

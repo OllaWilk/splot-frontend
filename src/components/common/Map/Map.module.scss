@@ -7,9 +7,9 @@
   height: 85vh;
   position: relative;
 
-  @include md-max {
-    min-height: 30vh;
-    height: 30vh;
+  @include xl-max {
+    min-height: 40vh;
+    height: 40vh;
   }
 }
 
@@ -21,4 +21,8 @@
   color: var(--color-main);
   text-transform: uppercase;
   text-align: center;
+}
+
+button {
+  z-index: 999;
 }

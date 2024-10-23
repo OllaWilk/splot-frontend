@@ -4,7 +4,7 @@
   position: fixed;
   left: 0;
   width: 250px;
-  height: 100vh;
+  height: 120svh;
   background-color: var(--color-dark);
   padding: 17px 0;
   transition: transform 0.3s ease-in-out;
@@ -29,6 +29,7 @@
 
     &.open {
       transform: translateY(0);
+      z-index: 9999;
     }
 
     &.close {

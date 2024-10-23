@@ -10,6 +10,7 @@
   }
   label {
     margin: 10px 0;
+    font-size: 0.95rem;
   }
 
   select {
@@ -18,14 +19,21 @@
     appearance: none;
   }
 
-  input,
-  select {
+  input {
     display: block;
     width: 100%;
-    padding: 8px 10px;
+    padding: 12px 16px;
     border: 1px solid var(--color-dark-grey);
-    border-radius: 4px;
+    border-radius: 8px;
     background-color: var(--color-light);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1rem;
+
+    &:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+      outline: none;
+    }
   }
 }
 

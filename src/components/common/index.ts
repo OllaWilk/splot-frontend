@@ -13,6 +13,7 @@ export * from './Form';
 export { HamburgerNavigation } from './HamburgerNavigation/HamburgerNavigation';
 export { Logo } from './Logo/Logo';
 export { Map } from './Map/Map';
+export { Modal } from './Modal/Modal';
 export { Navigation } from './Navigation/Navigation';
 export { NoDataAlert } from './NoDataAlert/NoDataAlert';
 export { Paragraph } from './Paragraph/Paragraph';

@@ -7,3 +7,4 @@ export { RoundButton } from './RoundButton/RoundButton';
 export { ButtonBlack } from './ButtonBlack/ButtonBlack';
 export { ButtonLogout } from './ButtonLogout/ButtonLogout';
 export { ButtonSort } from './ButtonSort/ButtonSort';
+export { ButtonAddEvent } from './ButtonAddEvent/ButtonAddEvent';

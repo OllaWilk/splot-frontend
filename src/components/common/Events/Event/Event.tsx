@@ -1,8 +1,6 @@
 /* eslint-disable indent */
 import React, { useState } from 'react';
-
 import { EventEntity } from '@alexwilk/spacesteps-types';
-
 import {
   ButtonDelete,
   ButtonEdit,

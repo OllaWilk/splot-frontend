@@ -2,17 +2,23 @@
 
 .sectionComponent {
   background-color: var(--color-light);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
   position: relative;
-  overflow: hidden;
   @include flex(row, flex-start, space-between);
-  flex-wrap: wrap;
-  flex-grow: 3;
   min-height: calc(100vh - 34px);
+  overflow: hidden;
 
-  @include md-max {
+  @include xl-max {
     flex-direction: column-reverse;
     justify-content: flex-end;
+  }
+
+  @include sm-max {
+    border-radius: 15px;
+  }
+
+  &:hover {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
   }
 }

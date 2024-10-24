@@ -1,6 +1,6 @@
 import React, { MouseEventHandler, useEffect } from 'react';
-import style from './Moda.module.scss';
 import { EventForm } from '../Events';
+import style from './Moda.module.scss';
 
 interface Props {
   toggleIsOpen: MouseEventHandler<HTMLDivElement>;

@@ -1,58 +1,79 @@
 @import '../../../styles/mixins.scss';
 
 .userWrap {
+  position: fixed;
+  right: 20px;
+  top: 20px;
   z-index: 999;
-  @include flex(row, center, flex-end);
+  @include flex(row, center, flex-center);
   gap: 20px;
   padding: 17px;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1111;
 
-  @include xl-max {
-    justify-content: center;
+  @include lg-max {
+    top: 100px;
+  }
+
+  @include md-max {
+    top: 20px;
   }
 
   @include sm-max {
-    flex-wrap: wrap-reverse;
+    top: 0px;
+    right: 0;
+    flex-direction: column-reverse;
   }
 
   .text {
-    width: 80%;
     background-color: var(--color-light);
     padding: 20px 15px;
-    border-radius: 30px;
+    border-radius: 20px;
     position: relative;
-    text-align: center;
+    transform-origin: center right;
+    transition: all 0.5s ease-in-out;
+    visibility: visible;
+    transition: all 0.3s ease-in-out;
+    color: var(--color-dark);
+    @include flex(column, center, center);
+    gap: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 
-    .ikonError {
+    .ikonError,
+    .ikonOk {
       font-size: 2rem;
-      color: var(--color-error);
+      margin-bottom: 10px;
     }
 
     .ikonOk {
-      font-size: 2rem;
       color: var(--color-ok);
     }
 
-    @include sm-max {
-      width: 100%;
-    }
-
-    span {
-      color: var(--color-main);
-    }
-
-    &::after {
-      content: '';
+    .close {
       position: absolute;
-      top: 50%;
-      right: -12px;
-      width: 0;
-      height: 0;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-top: 10px solid var(--color-light);
-      transform: translateY(-50%) rotate(-90deg);
-      @include shadow;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
     }
+
+    &.expanded {
+      visibility: visible;
+      padding: 20px 15px;
+    }
+
+    &.collapsed {
+      max-width: 60px;
+      padding: 10px;
+      text-align: center;
+      visibility: visible;
+      transform: translateX(0);
+    }
+  }
+
+  .shortMessage {
+    cursor: pointer;
   }
 
   .imgWrap {
@@ -62,15 +83,16 @@
     padding: 8px;
     border-radius: 50%;
     transition: transform 0.3s ease-in-out;
-    cursor: pointer;
+    @include flex(row, center, center);
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.6);
+
+    @include sm-max {
+      display: none;
+    }
 
     img {
       @include img;
       object-fit: contain;
     }
   }
-}
-
-.fadeIn {
-  display: none;
 }

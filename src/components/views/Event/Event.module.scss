@@ -4,9 +4,16 @@
   @include flex(column, stretch, center);
   flex-wrap: wrap;
   gap: 17px;
-  padding: 17px;
-
+  padding: 0 17px 17px 17px;
   width: 100%;
+
+  @include xl-max {
+    flex-direction: row;
+  }
+
+  @include sm-max {
+    flex-direction: column;
+  }
 }
 
 .chooseFile {
@@ -19,5 +26,28 @@
 }
 
 .text {
-  padding: 0 17px;
+  padding: 17px;
+}
+
+.eventWrap {
+  background-color: var(--color-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  position: relative;
+  @include flex(row, flex-start, space-between);
+  min-height: calc(100vh - 34px);
+  overflow: hidden;
+
+  @include xl-max {
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  @include sm-max {
+    border-radius: 15px;
+  }
+
+  &:hover {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  }
 }

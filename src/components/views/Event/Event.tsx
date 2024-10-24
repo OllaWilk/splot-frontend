@@ -56,7 +56,7 @@ export const Event = () => {
       : 'Once the event is completed, you will be able to add photos and use this event as a blog post.';
 
   return (
-    <SectionCart>
+    <div className={styles.eventWrap}>
       <LeftSidePanel>
         <EventDetails
           eventId={event.id}
@@ -93,6 +93,6 @@ export const Event = () => {
           </div>
         </ControlPanel>
       )}
-    </SectionCart>
+    </div>
   );
 };

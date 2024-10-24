@@ -5,10 +5,10 @@ import {
   SectionCart,
   SectionHeader,
   SortBar,
-  UserPanel,
   SearchBar,
   Map,
   Modal,
+  UserPanel,
 } from '../../common';
 
 export const Cockpit = () => {
@@ -16,6 +16,7 @@ export const Cockpit = () => {
 
   return (
     <SectionCart>
+      <UserPanel />
       <LeftSidePanel>
         <SectionHeader text={'Things to do <sup>yay!</sup>'} />
         <SearchBar />
@@ -24,7 +25,6 @@ export const Cockpit = () => {
         {isOpen && <Modal toggleIsOpen={toggleIsOpen} isOpen={isOpen} />}
       </LeftSidePanel>
       <ControlPanel>
-        <UserPanel />
         <Map />
       </ControlPanel>
     </SectionCart>

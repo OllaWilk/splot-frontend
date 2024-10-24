@@ -1,12 +1,7 @@
-/* eslint-disable indent */
-import React, { useState } from 'react';
-import parse from 'html-react-parser';
+import React, { useEffect, useState } from 'react';
 import { BiError } from 'react-icons/bi';
 import { AiOutlineCheckCircle } from 'react-icons/ai';
-import {
-  useAsistantMessageContext,
-  formatShortDate,
-} from '../../../utils/hooks/index';
+import { useAsistantMessageContext } from '../../../utils/hooks/index';
 import { userAvatar } from '../../../images';
 import styles from './UserPanel.module.scss';
 
@@ -15,46 +10,51 @@ interface Props {
 }
 
 const UserPanel = ({ userName }: Props) => {
-  // Access the assistant message context
   const { messageState } = useAsistantMessageContext();
-  // State to track the current message index
-  const [messageIndex, setMessageIndex] = useState(0);
+  const [isMessageVisible, setIsMessageVisible] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
 
-  // Get today's date and format it
-  const today: Date = new Date();
-  const formattedDate: string = formatShortDate(today);
+  useEffect(() => {
+    if (messageState.message) {
+      setIsMessageVisible(true);
+      setCollapsed(false);
+    } else {
+      setIsMessageVisible(false);
+    }
+  }, [messageState.message]);
 
-  // Array of messages to display in the user panel
-  const messages = [
-    'Hi, I am your virtual assistant ^_^',
-    `Today is <span>${formattedDate}</span>`,
-    'Keep up the great work!',
-  ];
-
-  // Function to cycle through the messages on image click
-  const nextInfo = () => {
-    setMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
+  const handleToggle = () => {
+    setCollapsed(!collapsed);
   };
 
   return (
     <div className={styles.userWrap}>
-      <div className={`${styles.text}`}>
-        {messageState.message ? (
-          <div>
-            {/* Display error or success icon based on ikonError */}
-            {messageState.ikonError ? (
-              <BiError className={styles.ikonError} />
-            ) : (
-              <AiOutlineCheckCircle className={styles.ikonOk} />
-            )}
-            <p>{messageState.message}</p>
-          </div>
-        ) : (
-          <p>{parse(messages[messageIndex])}</p>
-        )}
-      </div>
-      {/* Image that cycles through messages on click */}
-      <div className={styles.imgWrap} onClick={nextInfo}>
+      {isMessageVisible && (
+        <div
+          className={`${styles.text} ${
+            collapsed ? styles.collapsed : styles.expanded
+          }`}
+          onClick={handleToggle}
+        >
+          {!collapsed ? (
+            <>
+              <div className={styles.close}>&times;</div>
+              {messageState.ikonError ? (
+                <BiError className={styles.ikonError} />
+              ) : (
+                <AiOutlineCheckCircle className={styles.ikonOk} />
+              )}
+              <p>{messageState.message}</p>
+            </>
+          ) : (
+            <p className={styles.shortMessage} onClick={handleToggle}>
+              {messageState.message?.slice(0, 4)}...
+            </p>
+          )}
+        </div>
+      )}
+
+      <div className={styles.imgWrap}>
         <img src={userAvatar} alt='avatar' />
       </div>
     </div>

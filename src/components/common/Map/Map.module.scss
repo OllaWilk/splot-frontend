@@ -3,8 +3,8 @@
 .map {
   background-color: green;
   width: 100%;
-  min-height: 70vh;
-  height: 85vh;
+  min-height: calc(100vh - 34px);
+  height: calc(100vh - 34px);
   position: relative;
 
   @include xl-max {

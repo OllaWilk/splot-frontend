@@ -2,10 +2,14 @@
 
 .event {
   @include flex(column, stretch, space-around);
+  padding: 20px;
 
   @include xl-max {
     width: 100%;
-    padding: 0;
+  }
+
+  @include sm-max {
+    padding: 20px 10px;
   }
 
   .imgWrap {

@@ -1,7 +1,7 @@
 @import '../../../styles/mixins.scss';
 
 .paragraph {
-  text-align: justify;
+  word-break: break-all;
   margin: 8px 0;
   @include flex(column, flex-start, center);
 

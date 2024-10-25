@@ -1,3 +1,4 @@
+export { AppInfo } from './AppInfo/AppInfo';
 export { AnimatedAstronaut } from './AnimatedAstronaut/AnimatedAstronaut';
 export { Abstract } from './Abstract/Abstract';
 export * from './Buttons';

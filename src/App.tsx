@@ -12,7 +12,7 @@ import {
   Signup,
 } from './components/views';
 import { MainLayout } from './components/layout';
-import { MyPortfolio } from './components/common';
+import { Footer, MyPortfolio } from './components/common';
 
 function App() {
   const { user } = useAuthContext();
@@ -46,6 +46,7 @@ function App() {
         {/* Fallback route */}
         <Route path='*' element={<NotFound />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

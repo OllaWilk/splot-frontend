@@ -5,7 +5,6 @@ import {
   Paragraph,
   AnimatedAstronaut,
   ButtonBlack,
-  AppInfo,
 } from '../../common/index';
 import styles from './Welcome.module.scss';
 
@@ -35,7 +34,6 @@ const Welcome = () => {
             />
           )}
         </div>
-        <AppInfo />
       </article>
       <AnimatedAstronaut />
     </section>

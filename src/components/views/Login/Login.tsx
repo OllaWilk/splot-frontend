@@ -8,7 +8,7 @@ import {
   Logo,
   AnimatedAstronaut,
   ButtonBlack,
-  Footer,
+  AppInfo,
 } from '../../common/index';
 import styles from './Login.module.scss';
 
@@ -35,8 +35,8 @@ export const Login = () => {
   };
 
   return (
-    <>
-      <section className={styles.login}>
+    <section className={styles.section}>
+      <div className={styles.login}>
         <form onSubmit={handleSubmit}>
           <Logo />
           <div className={styles.inputWrapper}>
@@ -75,8 +75,8 @@ export const Login = () => {
           </Link>
         </form>
         <AnimatedAstronaut />
-      </section>
-      <Footer />
-    </>
+      </div>
+      <AppInfo />
+    </section>
   );
 };

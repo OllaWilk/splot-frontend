@@ -8,7 +8,7 @@ import {
   Logo,
   AnimatedAstronaut,
   ButtonBlack,
-  Footer,
+  AppInfo,
 } from '../../common/index';
 import styles from './Signup.module.scss';
 
@@ -45,8 +45,8 @@ export const Signup = () => {
   };
 
   return (
-    <>
-      <section className={styles.signup}>
+    <section className={styles.section}>
+      <div className={styles.signup}>
         <form onSubmit={handleSubmit}>
           <Logo text={'SplotApp'} />
           <div className={styles.inputWrapper}>
@@ -85,8 +85,8 @@ export const Signup = () => {
           </Link>
         </form>
         <AnimatedAstronaut />
-      </section>
-      <Footer />
-    </>
+      </div>
+      <AppInfo />
+    </section>
   );
 };

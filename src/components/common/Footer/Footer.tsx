@@ -2,18 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SiGmail } from 'react-icons/si';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { useAuthContext } from '../../../utils/hooks/index';
 import styles from './Footer.module.scss';
 
 export const Footer = () => {
-  const { user } = useAuthContext();
-
   return (
-    <footer className={`${styles.footer} ${user ? styles.cockpitView : ''}`}>
-      <p className={styles.info}>
-        This application is made from scratch for training and recruitment
-        purposes.
-      </p>
+    <footer className={styles.footer}>
       <div className={styles.links}>
         <span>Aleksandra Wilk | </span>
         <Link to='https://github.com/OllaWilk'>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { ButtonLogout, Footer, Logo, Navigation } from '../../common/index';
+import { ButtonLogout, Logo, Navigation } from '../../common/index';
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import styles from './MainLayout.module.scss';
 
@@ -27,7 +27,6 @@ const MainLayout = () => {
       <section className={styles.cockpit}>
         <Outlet />
       </section>
-      <Footer />
     </div>
   );
 };

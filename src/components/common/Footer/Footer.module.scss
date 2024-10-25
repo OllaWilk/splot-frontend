@@ -1,39 +1,20 @@
 @import '../../../styles/mixins.scss';
 
 .footer {
-  max-width: 1400px;
-  padding: 0 20px;
-  margin: 0 auto;
-  @include flex(row, center, space-between);
-  text-align: center;
+  padding: 20px 60px;
+  @include flex(row, center, flex-end);
   color: var(--color-dark);
-
-  @include lg-max {
-    padding-top: 30px;
-    padding-bottom: 20px;
-  }
+  gap: 20px;
+  word-break: break-all;
 
   @include md-max {
+    padding: 20px;
     flex-direction: column;
-    text-align: justify;
-  }
-
-  &.cockpitView {
-    color: var(--color-dark);
-  }
-
-  .info {
-    font-size: 0.9rem;
-
-    @include sm-max {
-      margin-bottom: 20px;
-    }
   }
 
   .links {
     @include flex(row, center, flex-end);
     gap: 15px;
-    width: 30%;
 
     @include md-max {
       flex-wrap: wrap;

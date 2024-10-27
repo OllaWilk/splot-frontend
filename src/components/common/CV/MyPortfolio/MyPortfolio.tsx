@@ -15,9 +15,6 @@ const MyPortfolio = () => {
             >
               <div className={styles.projectImage}>
                 <img src={project.image} alt={project.title} />
-                <p className={styles.projectDescription}>
-                  {project.description}
-                </p>
               </div>
             </a>
             <div className={styles.projectContent}>

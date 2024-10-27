@@ -73,6 +73,10 @@ const About = () => {
         <div className={styles.leftSide}>
           <SkillsSection skills={skills} />
           <LanguageSection />
+          <div className={styles.other}>
+            <p className={styles.text}>Other:</p>
+            <p>Advanced First Aid Certification</p>
+          </div>
         </div>
         <div className={styles.rightSide}>
           <Contact />

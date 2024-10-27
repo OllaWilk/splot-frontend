@@ -32,7 +32,7 @@ const MainLayout = () => {
         <Link to={'/cockpit'} className={styles.logoWrap}>
           <Logo text={'SplotApp'} slogan={false} />
         </Link>
-        <Navigation />
+        <Navigation toggleNavigation={toggleNavigation} />
         <ButtonLogout />
       </header>
       <section className={styles.cockpit}>

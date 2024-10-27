@@ -12,12 +12,15 @@
   gap: 30px;
   margin: 2rem 0;
 
+  @include sm-max {
+    @include flex(column, stretch, center);
+  }
+
   .projectCard {
     background-color: var(--color-light);
     border-radius: 17px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
   }
 
@@ -33,12 +36,7 @@
       height: 100%;
       position: absolute;
       top: 0;
-      transform: translateY(0%);
-      transition: transform 3s ease;
-    }
-
-    &:hover img {
-      transform: translateY(-100%);
+      object-fit: cover;
     }
   }
 
@@ -51,21 +49,21 @@
   font-size: 1.4rem;
 }
 
-.projectDescription {
-  padding: 20px;
-  color: var(--color-dark);
-}
-
 .projectLinks {
   margin-top: 1rem;
   @include flex(row, center, space-between);
+
+  @include sm-max {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
 }
 
 .projectLink {
   background-color: var(--color-main);
   @include btn;
   color: white;
-  border-radius: 30px;
   font-size: 0.9rem;
 
   &:hover {

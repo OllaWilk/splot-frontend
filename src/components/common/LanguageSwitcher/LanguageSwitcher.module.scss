@@ -2,29 +2,33 @@
 
 .language {
   @include flex(row, center, flex-end);
-  gap: 10px;
+  gap: 12px;
   width: 100%;
-  padding: 20px 0;
+  margin-bottom: 20px;
 
-  .flag,
-  .active {
-    background-color: var(--color-grey);
-    opacity: 0.5;
-    height: 25px;
-    padding: 1px;
-    transition: var(--transition);
+  .flag {
+    color: var(--color-dark);
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    opacity: 0.6;
+    @include flex(row, center, center);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 
     &:hover {
+      transform: scale(1.1);
       opacity: 1;
     }
 
-    span {
-      padding: 8px;
-      cursor: pointer;
+    &.active {
+      background-color: var(--color-light-main);
+      color: var(--color-main);
+      opacity: 1;
+      transform: scale(1.15);
     }
-  }
-
-  .active {
-    opacity: 1;
   }
 }

@@ -17,23 +17,26 @@ const NavigationCartDots = ({
   setCurrentCard,
 }: Props) => (
   <div className={styles.slideNav}>
-    <div className={styles.navigationSlide} onClick={handlePrev}>
-      prev ---
-    </div>
+    <button
+      className={styles.navigationSlide}
+      onClick={handlePrev}
+      aria-label='Previous'
+    >
+      ◀
+    </button>
     <div className={styles.dots}>
       {Array.from({ length: cartsNumb }).map((_, index) => (
-        <p
+        <span
           key={index}
           className={index === currentCard ? styles.activeDot : styles.dot}
           onClick={() => setCurrentCard(index)}
-        >
-          {index + 1}
-        </p>
+          aria-label={`Go to slide ${index + 1}`}
+        />
       ))}
     </div>
-    <div className={styles.navigationSlide} onClick={handleNext}>
-      --- next
-    </div>
+    <button className={styles.navigationSlide} onClick={handleNext}>
+      ▶
+    </button>
   </div>
 );
 

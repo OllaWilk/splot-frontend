@@ -1,46 +1,36 @@
 export const infoEn = [
   {
-    title: 'Space Steps - Your Personal Management Hub!',
-    abstract:
-      'Space Steps was created out of the need to manage and organize time in the real world. It is designed to help control habits, foster personal growth, and maintain good relationships with others.',
+    title: 'Discover SplotApp – Your Cosmic Life Organizer',
+    description: `SplotApp was created to restore balance in a world of digital distractions and superficial connections.
+      Splot allows you to manage your time and relationships in a harmonious and balanced way, helping you focus on what truly matters –
+      genuine connections and personal growth.`,
+    benefits: [
+      'Organize your tasks and meetings in one place',
+      'Build valuable relationships and stay connected with loved ones',
+      'Break the routine and shape positive habits every day',
+    ],
+    cta: 'Start your journey with SplotApp!',
+  },
+  {
+    title:
+      'The Paradox of Digital Connections: More Acquaintances, Less Closeness',
+    description:
+      'Inspired by the growing sense of alienation in the digital age, I realized that despite the multitude of social media tools, people are becoming increasingly lonely. I noticed that social media, while promising better connections with others, often creates chaos in users’ lives, overwhelming them with an excess of stimuli and causing them to lose meaningful interpersonal connections.',
 
-    paragraph: [
-      'Nowadays, social media platforms like Facebook and Instagram have grown to enormous sizes, causing us to often get lost in the flood of information and events. Despite having hundreds of friends online, we often feel lonely in the crowd. In reality, attempts to meet up with friends often end up with lost messages and ideas buried under piles of short messages on messengers. Organizing a list of activities we can do together becomes nearly impossible.',
-      'Space Steps addresses this problem by offering an intuitive tool that simplifies planning and helps track important events.',
-      'With Space Steps, you can be sure that no essential information will get lost in the digital noise. Focus on what really matters and enjoy better organization of your time and relationships with loved ones.',
-    ],
+    cta: 'Start your journey with SplotApp!',
   },
   {
-    title: 'SpaceSteps Tools Ensure You Never Miss a Moment.',
+    title: 'The Creation of Splot',
+    description:
+      'In response to this problem, "Splot" was created. The app was designed to integrate elements of time management, habit tracking, personal growth, and organizing social gatherings. Its primary goal was to create a space where users could better organize their lives while nurturing relationships with friends and loved ones. "Splot" aimed to help users go beyond superficial connections offered by traditional social media and focus on real, valuable interactions.',
 
-    paragraph: [
-      '<strong>Add Event:</strong> Add an event that interests you.',
-      '<strong>Interactive Map:</strong> Allows you to visualize event locations, making logistics planning much easier.',
-      '<strong>Categorization and Sorting Options:</strong> Help you track what’s most important.',
-      '<strong>Join an Event:</strong> You can join your friends’ events or they can join yours.',
-      '<strong>Participant List:</strong> You can join your friends’ events or they can join yours.',
-      '<strong>Edit Event:</strong> If something changes, you can edit your events at any time.',
-      '<strong>Transform into Blog:</strong> When an event is over and you attended it, you can transform it into a blog post, sharing your experiences and memories with others.',
-    ],
+    cta: 'Start your journey with SplotApp!',
   },
   {
-    title: 'Optimize Daily Routines <sup>COMING SOON!</sup>',
-    abstract: 'Your to-do list: ',
-    paragraph: [
-      '<strong>Add Task:</strong> Add a task that is important to you and assign it to the appropriate list.',
-      '<strong>Task List:</strong> Organize your tasks in to-do lists, making it easier to manage daily responsibilities.',
-      '<strong>Add New Columns:</strong> Create new columns to better organize your tasks and inspirations. Each column can have its own title and task list.',
-      '<strong>Edit Lists:</strong> If something changes, you can edit your task lists at any time.',
-    ],
-  },
-  {
-    title: 'Habit Tracking <sup>IN THE FUTURE</sup>',
-    abstract: 'Your habit tracking tool: ',
-    paragraph: [
-      '<strong>Add Habit:</strong> Add a habit that you want to track.',
-      '<strong>Game:</strong> Strengthen your habits through interactive games that motivate you to keep going.',
-      '<strong>Statistics:</strong> Check statistics to see how well you are tracking your habits and achieving your goals.',
-      '<strong>Reading Habits:</strong> Add books you want to read and track the number of pages read daily. Monitor the number of books read and unread to see your progress.',
-    ],
+    title: 'The Meaning Behind "Splot"',
+    description: `I chose the name 'Splot' for a reason – it symbolizes the weaving together of various aspects of life into a harmonious whole. The word 'splot' refers to the intertwining of threads, in this case, different parts of personal, professional, and social life. The app's logo, inspired by Slavic folklore, references traditional patterns that symbolize bonds between people and nature.`,
+    text: 'The name "Splot" was chosen for a reason – it symbolizes the weaving together of different aspects of life into a harmonious whole. The word "splot" refers to the intertwining of threads, in this case, various aspects of personal, professional, and social life. The app’s logo, inspired by Slavic folklore, references traditional patterns that symbolize bonds between people and nature.',
+
+    cta: 'Start your journey with SplotApp!',
   },
 ];

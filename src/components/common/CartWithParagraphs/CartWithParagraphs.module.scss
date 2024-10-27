@@ -1,7 +1,72 @@
 @import '../../../styles//mixins.scss';
 
 .textWrap {
-  @include flex(column, flex-start, flex-start);
+  @include flex(column, flex-start, space-between);
+  padding: 20px;
+  gap: 20px;
+  height: 100%;
+
+  @include sm-max {
+    border-radius: 15px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+    color: var(--color-main);
+    border-bottom: 1px solid var(--color-main);
+    padding: 1rem 0;
+    width: 100%;
+    text-justify: inter-word;
+
+    @include md-max {
+      font-size: 1.4rem;
+    }
+  }
+
+  .description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-justify: inter-word;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .benefits {
+    padding: 0;
+    font-size: 1rem;
+    color: var(--color-main);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    li {
+      position: relative;
+      padding-left: 20px;
+
+      @include md-max {
+        font-size: 0.95rem;
+      }
+
+      &:before {
+        content: '★';
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+}
+
+.ctaButton {
+  @include btn;
+  background: var(--color-dark);
+  color: var(--color-light);
+  font-size: 1rem;
+  margin: 20px 0;
+  display: inline-block;
+
+  &:hover {
+    background: var(--color-danger);
+  }
 }
 
 .hidden {

@@ -6,7 +6,11 @@ import { FaEarthAmericas } from 'react-icons/fa6';
 
 import style from './Navigation.module.scss';
 
-const Navigation = () => {
+interface Props {
+  toggleNavigation: () => void;
+}
+
+const Navigation = ({ toggleNavigation }: Props) => {
   const navigation = [
     { name: 'Cockpit', path: 'cockpit', icon: <FaStar /> },
     { name: 'Info', path: 'info', icon: <FaRocket /> },
@@ -23,6 +27,7 @@ const Navigation = () => {
             isActive ? `${style.navLink} ${style.active}` : style.navLink
           }
           to={`/${item.path}`}
+          onClick={toggleNavigation}
         >
           <div className={style.mark}>{item.icon}</div>
           <span>{item.name}</span>

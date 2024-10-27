@@ -3,8 +3,8 @@ import { infoEn, infoPl } from '../../../i18n/index';
 import myAsistant from '../../../images/asistant.png';
 import {
   CartWithParagraphs,
-  NavigationCartDots,
   LanguageSwitcher,
+  NavigationCartDots,
 } from '../../common/index';
 import styles from './Info.module.scss';
 
@@ -24,11 +24,10 @@ const Info = () => {
   };
 
   return (
-    <div className={styles.infoComponent}>
+    <div className={styles.infoContent}>
       <LanguageSwitcher lang={lang} setLang={setLang} />
-
-      <div className={styles.imgWrap}>
-        <img className={styles.mainImg} src={myAsistant} alt='asistant' />
+      <div className={styles.imageWrapper}>
+        <img src={myAsistant} alt='asistant' />
       </div>
       <article className={styles.info}>
         {carts.map((cart, index) => (

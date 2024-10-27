@@ -1,46 +1,36 @@
 export const infoPl = [
   {
-    title: 'Space Steps - Twoje Osobiste Centrum Zarządzania!',
-    abstract:
-      'Space Steps powstało z potrzeby zarządzania i organizacji czasu w realnym świecie. Jest zaprojektowane, aby pomóc kontrolować nawyki, wspierać rozwój osobisty i utrzymywać dobre relacje z innymi.',
+    title: 'Odkryj SplotApp – Twój Kosmiczny Organizator Życia',
+    description: `SplotApp został stworzony, aby przywrócić równowagę w świecie cyfrowych rozproszeń i powierzchownych relacji.
+      Splot pozwala zarządzać czasem i relacjami w harmonijny i zrównoważony sposób, pomagając skupić się na tym, co naprawdę ważne –
+      prawdziwych relacjach i osobistym rozwoju.`,
+    benefits: [
+      'Organizuj swoje zadania i spotkania w jednym miejscu',
+      'Buduj wartościowe relacje i pozostań w kontakcie z bliskimi',
+      'Przełamuj rutynę i kształtuj pozytywne nawyki każdego dnia',
+    ],
+    cta: 'Rozpocznij swoją podróż ze SplotApp!',
+  },
+  {
+    title: 'Paradoks Cyfrowych Relacji: Więcej Znajomych, Mniej Bliskości',
+    description:
+      'Zainspirowany rosnącym poczuciem wyobcowania w erze cyfrowej, zauważyłam, że pomimo mnogości narzędzi społecznościowych, ludzie stają się coraz bardziej samotni. Zauważyłam, że media społecznościowe, obiecując lepsze połączenie z innymi, często wprowadzają chaos do życia użytkowników, przytłaczając ich nadmiarem bodźców i powodując utratę znaczących relacji międzyludzkich.',
 
-    paragraph: [
-      'W dzisiejszych czasach platformy społecznościowe, takie jak Facebook i Instagram, rozrosły się do ogromnych rozmiarów, przez co często gubimy się w natłoku informacji i wydarzeń. Pomimo posiadania setek znajomych online, często czujemy się samotni w tłumie. W rzeczywistości, próby umówienia się ze znajomymi kończą się zagubionymi wiadomościami i pomysłami, które znikają pod stertą krótkich wiadomości na komunikatorach. Organizowanie listy aktywności, które możemy wspólnie realizować, staje się niemal niemożliwe.',
-      'Space Steps rozwiązuje ten problem, oferując intuicyjne narzędzie, które upraszcza planowanie i pomaga śledzić ważne wydarzenia.',
-      ' Dzięki Space Steps masz pewność, że żadna istotna informacja nie zginie w cyfrowym szumie. Skup się na tym, co naprawdę ważne, i ciesz się lepszą organizacją swojego czasu oraz relacji z bliskimi.',
-    ],
+    cta: 'Rozpocznij swoją podróż ze SplotApp!',
   },
   {
-    title: 'Narzędzia SpaceSteps zapewnią, że nie przegapisz żadnej chwili.',
+    title: 'Powstanie Splot',
+    description:
+      'W odpowiedzi na ten problem powstał "Splot". Aplikacja została zaprojektowana, aby połączyć elementy zarządzania czasem, śledzenia nawyków, rozwoju osobistego i organizowania spotkań towarzyskich. Jej głównym celem było stworzenie przestrzeni, w której użytkownicy mogliby lepiej organizować swoje życie, jednocześnie pielęgnując relacje z przyjaciółmi i bliskimi. "Splot" miał pomóc użytkownikom wyjść poza powierzchowne relacje oferowane przez tradycyjne media społecznościowe i skupić się na prawdziwych, wartościowych interakcjach.',
 
-    paragraph: [
-      '<strong>Add Event:</strong> Dodaj wydarzenie, które jest dla Ciebie interesujące.',
-      '<strong>Interaktywna mapa:</strong> Pozwala wizualizować lokalizacje wydarzeń, co znacznie ułatwia planowanie logistyczne.',
-      '<strong>Opcje kategoryzacji i sortowania:</strong> Pomagają śledzić to, co jest najważniejsze.',
-      '<strong>Dołącz do wydarzenia:</strong> Możesz dołączyć do wydarzeń swoich znajomych lub oni mogą dołączyć do twoich.',
-      '<strong>Lista uczestników:</strong> Możesz dołączyć do wydarzeń swoich znajomych lub oni mogą dołączyć do twoich.',
-      '<strong>Edytuj wydarzenie:</strong> Jeśli coś się zmieniło, w dowolnym momencie możesz edytować swoje wydarzenia.',
-      '<strong>Przekształć w bloga:</strong> Kiedy wydarzenie się zakończy i byłeś na nim, możesz przekształcić je we wpis na bloga, dzieląc się swoimi doświadczeniami i wspomnieniami z innymi.',
-    ],
+    cta: 'Rozpocznij swoją podróż ze SplotApp!',
   },
   {
-    title: 'Optymalizuj Codzienne Rutyny <sup>COMING SOON!</sup>',
-    abstract: 'Twoja lista to-do: ',
-    paragraph: [
-      '<strong>Dodaj zadanie:</strong> Dodaj zadanie, które jest dla Ciebie istotne i przypisz je do odpowiedniej listy.',
-      '<strong>Lista zadań:</strong> Organizuj swoje zadania w listach to-do, co ułatwi zarządzanie codziennymi obowiązkami.',
-      '<strong>Dodawanie nowych kolumn:</strong> Twórz nowe kolumny, aby lepiej organizować swoje zadania i inspiracje. Każda kolumna może mieć własny tytuł i listę zadań.',
-      '<strong>Edytowanie list:</strong> Jeśli coś się zmieniło, w dowolnym momencie możesz edytować swoje listy zadań',
-    ],
-  },
-  {
-    title: 'Śledzenie Nawyków <sup>IN THE FUTURE</sup>',
-    abstract: 'Twoje narzędzie do śledzenia nawyków: ',
-    paragraph: [
-      '<strong>Dodaj nawyk:</strong> Dodaj nawyk, który chcesz śledzić.',
-      '<strong>gra:</strong>  Wzmacniaj swoje nawyki poprzez interaktywne gry, które motywują Cię do dalszego działania',
-      '<strong>Statystyki:</strong> Sprawdzaj statystyki, aby zobaczyć, jak idzie Ci śledzenie nawyków i osiąganie celów.',
-      '<strong>Nawyki związane z czytaniem:</strong> Dodaj książki, które chcesz przeczytać, i śledź liczbę przeczytanych stron dziennie. Monitoruj liczbę przeczytanych i nieprzeczytanych książek, aby zobaczyć swoje postępy.',
-    ],
+    title: 'Znaczenie Nazwy "Splot"',
+    description:
+      'Nazwę "Splot" wybrałam nie bez powodu – symbolizuje ona złączenie różnych aspektów życia w harmonijną całość. Słowo "splot" odnosi się do splatania wątków, w tym przypadku różnych części życia osobistego, zawodowego i towarzyskiego. Logo aplikacji, inspirowane słowiańskim folklorem, nawiązuje do tradycyjnych wzorów, symbolizujących więzi między ludźmi i naturą.',
+    text: 'Nazwa "Splot" została wybrana nieprzypadkowo – symbolizuje splatanie różnych aspektów życia w harmonijną całość. Słowo "splot" odnosi się do przeplatania nici, w tym przypadku różnych aspektów życia osobistego, zawodowego i społecznego. Logo aplikacji, inspirowane słowiańskim folklorem, nawiązuje do tradycyjnych wzorów symbolizujących więzi między ludźmi a naturą.',
+
+    cta: 'Rozpocznij swoją podróż ze SplotApp!',
   },
 ];

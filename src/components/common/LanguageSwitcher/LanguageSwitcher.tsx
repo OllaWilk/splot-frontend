@@ -9,18 +9,20 @@ interface Props {
 
 const LanguageSwitcher = ({ lang, setLang }: Props) => (
   <div className={styles.language}>
-    <div
-      className={lang === 'en' ? styles.flag : styles.active}
+    <button
+      className={`${styles.flag} ${lang === 'pl' ? styles.active : ''}`}
       onClick={() => setLang('pl')}
+      aria-label='Polski'
     >
-      <span>PL</span>
-    </div>
-    <div
-      className={lang === 'pl' ? styles.flag : styles.active}
+      PL
+    </button>
+    <button
+      className={`${styles.flag} ${lang === 'en' ? styles.active : ''}`}
       onClick={() => setLang('en')}
+      aria-label='English'
     >
-      <span>EN</span>
-    </div>
+      EN
+    </button>
   </div>
 );
 

@@ -125,3 +125,24 @@
     border-bottom: 1px var(--color-grey) solid;
   }
 }
+
+.other {
+  border-top: 1px solid var(--color-light);
+  padding: 17px 0;
+  @include md-max {
+    border: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.text {
+  margin: 17px 0;
+}
+
+.text:first-of-type {
+  margin-top: 0;
+  margin-bottom: 17px;
+}

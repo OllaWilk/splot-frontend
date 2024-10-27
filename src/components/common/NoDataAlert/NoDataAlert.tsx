@@ -7,10 +7,6 @@ interface Props {
 
 const NoDataAlert = ({ message }: Props) => (
   <div className={styles.noDataAlert}>
-    <img
-      src='https://media.tenor.com/nEP6ovplEd8AAAAi/so-really.gif'
-      alt='no data Travolta'
-    />
     <h2>{message}</h2>
   </div>
 );

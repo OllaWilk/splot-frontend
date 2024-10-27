@@ -20,13 +20,13 @@
   }
 
   @include md-max {
-    top: 65px;
     height: 100vh;
-    @include flex(column, center, flex-start);
-    padding: 20vh 10%;
-    transform: translateY(85vh);
+    @include flex(column, flex-start, center);
+    flex-wrap: wrap;
+    transform: translateY(90vh);
     gap: 20px;
     z-index: 9999;
+    width: 100%;
 
     &.open {
       transform: translateY(0);
@@ -44,13 +44,13 @@
   width: 100%;
   background-color: var(--color-dark);
   color: var(--color-light);
-  padding: 20px;
   cursor: pointer;
   z-index: 99999;
   font-size: 1.5rem;
+  height: 10vh;
 
   @include md-max {
-    display: block;
+    @include flex(row, center, center);
   }
 
   &:hover {
@@ -67,8 +67,6 @@
 }
 
 .logoWrap {
-  margin: 17px 0;
-
   img {
     height: 55px;
   }

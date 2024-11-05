@@ -41,7 +41,7 @@ export const workExpData = [
     year: '2023-Present',
     name: 'FullStack Web Developer',
     description:
-      'Managed and maintained the website operations for SmartQuba and IceQub. Collaborated closely with clients to understand their needs, making necessary adjustments to meet their digital objectives.',
+      'Managed and maintained the website operations for SmartQube and IceQub. Collaborated closely with clients to understand their needs, making necessary adjustments to meet their digital objectives.',
   },
 ];
 

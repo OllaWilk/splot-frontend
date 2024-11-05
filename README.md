@@ -1,7 +1,15 @@
 # 🍀 SplotApp overview v0.1.0 frontend
 
-Welcome to the repository of my feature-rich application! Below is a detailed breakdown of the various functionalities and features offered by my platform:
+Welcome to the repository of my feature-rich application! Below is a detailed breakdown of the various functionalities and features offered by my platform.
 
+
+## 🛠️  Skills: 
+
+* Express.js– building a scalable and modular backend for user data management and API handling.
+* React.js – creating a dynamic and interactive user interface.
+* MySQL – designing and managing the database.
+* RESTful APIs – designing and implementing API interfaces.
+* UX/UI Design – creating a user-friendly and intuitive interface.
 ## 🙋🏼‍♀️ Live demo:
 
 [![Watch Demo Video](screenshots/welcome.png)](https://www.splotapp.eu)

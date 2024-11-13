@@ -1,14 +1,15 @@
 import React from 'react';
-import styles from './List.module.scss';
-import { FaBook } from 'react-icons/fa';
+import { FaBook, FaCamera, FaGamepad } from 'react-icons/fa';
 import { IconType } from 'react-icons';
+import { Column } from '../Column/Column';
+import styles from './List.module.scss';
 
 interface Card {
   key: number;
   title: string;
 }
 
-interface Column {
+interface ColumnData {
   key: number;
   id?: string;
   title: string;
@@ -17,7 +18,7 @@ interface Column {
 }
 
 export const List = () => {
-  const columns: Column[] = [
+  const columns: ColumnData[] = [
     {
       key: 0,
       title: 'Books',
@@ -36,6 +37,7 @@ export const List = () => {
     {
       key: 1,
       title: 'Movies',
+      icon: FaCamera,
       cards: [
         {
           key: 11,
@@ -50,6 +52,7 @@ export const List = () => {
     {
       key: 2,
       title: 'Games',
+      icon: FaGamepad,
       cards: [
         {
           key: 210,
@@ -69,21 +72,9 @@ export const List = () => {
 
   return (
     <section className={styles.list}>
-      <div className={styles.columns}>
-        {columns.map((columnData) => (
-          <section key={columnData.id} className={styles.column}>
-            <h3 className={styles.title}>{columnData.title}</h3>
-            <div>
-              {columnData.cards.map((cardData) => (
-                <div className={styles.card} key={cardData.title}>
-                  <h3 className={styles.titleCard}> {cardData.title}</h3>
-                  <span className={styles.deleteIcon}>X</span>
-                </div>
-              ))}
-            </div>
-          </section>
-        ))}
-      </div>
+      {columns.map(({ key, ...columnData }) => (
+        <Column key={key} {...columnData} />
+      ))}
     </section>
   );
 };

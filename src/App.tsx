@@ -10,6 +10,7 @@ import {
   About,
   Login,
   Signup,
+  Library,
 } from './components/views';
 import { MainLayout } from './components/layout';
 import { Footer, MyPortfolio } from './components/common';
@@ -34,6 +35,7 @@ function App() {
         {user ? (
           <Route element={<MainLayout />}>
             <Route path='/cockpit' element={<Cockpit />} />
+            <Route path='/library' element={<Library />} />
             <Route path='/events/:id' element={<Event />} />
             <Route path='/info' element={<Info />} />
             <Route path='/AleksandraWilk' element={<About />} />

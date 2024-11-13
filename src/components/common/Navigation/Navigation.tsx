@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { FaStar, FaRocket } from 'react-icons/fa';
 import { TbUfo } from 'react-icons/tb';
 import { FaEarthAmericas } from 'react-icons/fa6';
+import { IoLibrary } from 'react-icons/io5';
 
 import style from './Navigation.module.scss';
 
@@ -13,6 +14,7 @@ interface Props {
 const Navigation = ({ toggleNavigation }: Props) => {
   const navigation = [
     { name: 'Cockpit', path: 'cockpit', icon: <FaStar /> },
+    { name: 'Library', path: 'library', icon: <IoLibrary /> },
     { name: 'Info', path: 'info', icon: <FaRocket /> },
     { name: 'For Recruiters', path: 'AleksandraWilk', icon: <TbUfo /> },
     { name: 'Portfolio', path: 'portfolio', icon: <FaEarthAmericas /> },

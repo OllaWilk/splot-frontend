@@ -6,3 +6,4 @@ export { Event } from './Event/Event';
 export { NotFound } from './NotFound/NotFound';
 export { Info } from './Info/Info';
 export { About } from './About/About';
+export { Library } from './Library/Library';

@@ -13,6 +13,7 @@ export { Faq } from './Faq/Faq';
 export * from './Form';
 export { HamburgerNavigation } from './HamburgerNavigation/HamburgerNavigation';
 export { Logo } from './Logo/Logo';
+export { List } from './List/List';
 export { Map } from './Map/Map';
 export { Modal } from './Modal/Modal';
 export { Navigation } from './Navigation/Navigation';

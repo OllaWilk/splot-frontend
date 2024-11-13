@@ -1,11 +1,9 @@
 @import '../../../styles/mixins.scss';
 
-.sectionComponent {
+.library {
   background-color: var(--color-light);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
-  position: relative;
-  @include flex(row, flex-start, space-between);
   min-height: calc(100vh - 34px);
   overflow: hidden;
 
@@ -21,8 +19,4 @@
   &:hover {
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
   }
-}
-
-.column {
-  @include flex(column, flex-start, flex-start);
 }

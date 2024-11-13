@@ -2,6 +2,8 @@
 
 .list {
   padding: 1rem;
+  @include flex(row, flex-start, space-between);
+  overflow: auto;
 
   @include md-max {
     .columns {
@@ -18,58 +20,4 @@
 .columns {
   @include flex(row, flex-start, space-between);
   overflow: auto;
-
-  .column {
-    flex-shrink: 0;
-    width: calc(33% - 1rem);
-    background: var(--color-grey);
-    margin: 0 1rem 1rem 0;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    color: var(--color-light);
-
-    @include md-max {
-      width: 100%;
-    }
-
-    &:last-child {
-      margin: 0 0 1rem 0;
-    }
-
-    .title {
-      text-align: center;
-      font-size: 1.5rem;
-      padding: 1rem 1rem;
-      background-color: var(--color-dark);
-      border-radius: 12px 12px 0 0;
-    }
-  }
-}
-
-.card {
-  @include flex(row, center, space-between);
-  background: var(--color-light);
-  border: 1px solid var(--color-dark-grey);
-  margin: 1rem;
-  border-radius: 12px;
-
-  .titleCard {
-    color: var(--color-dark);
-    padding: 1rem;
-  }
-
-  span {
-    color: var(--color-dark-blue);
-    opacity: 0;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.2s ease-in-out;
-    padding: 1rem;
-  }
-}
-
-.card:hover {
-  span {
-    opacity: 1;
-  }
 }

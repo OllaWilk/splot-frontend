@@ -1,23 +1,26 @@
 @import '../../../styles/mixins.scss';
 
 .list {
-  padding: 1rem;
-  @include flex(row, flex-start, space-between);
-  overflow: auto;
+  padding: 0 1rem;
+}
 
-  @include md-max {
-    .columns {
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    .creator {
-      width: 100%;
-    }
-  }
+.creator {
+  width: 33%;
+  margin: 2rem auto 0;
 }
 
 .columns {
   @include flex(row, flex-start, space-between);
   overflow: auto;
+}
+
+@include md-max {
+  .columns {
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .creator {
+    width: 100%;
+  }
 }

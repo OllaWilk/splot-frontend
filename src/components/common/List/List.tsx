@@ -1,6 +1,7 @@
-import React from 'react';
-import { FaBook, FaCamera, FaGamepad } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaBook, FaCamera, FaGamepad, FaListAlt } from 'react-icons/fa';
 import { IconType } from 'react-icons';
+import { Creator } from '../Creator/Creator';
 import { Column } from '../Column/Column';
 import styles from './List.module.scss';
 
@@ -18,20 +19,14 @@ interface ColumnData {
 }
 
 export const List = () => {
-  const columns: ColumnData[] = [
+  const [columns, setColumns] = useState<ColumnData[]>([
     {
       key: 0,
       title: 'Books',
       icon: FaBook,
       cards: [
-        {
-          key: 10,
-          title: 'This Is Going to Hurt',
-        },
-        {
-          key: 11,
-          title: 'Interpreter of Maladies',
-        },
+        { key: 10, title: 'This Is Going to Hurt' },
+        { key: 11, title: 'Interpreter of Maladies' },
       ],
     },
     {
@@ -39,14 +34,8 @@ export const List = () => {
       title: 'Movies',
       icon: FaCamera,
       cards: [
-        {
-          key: 11,
-          title: 'Harry Potter',
-        },
-        {
-          key: 2111,
-          title: 'Star Wars',
-        },
+        { key: 12, title: 'Harry Potter' },
+        { key: 13, title: 'Star Wars' },
       ],
     },
     {
@@ -54,27 +43,33 @@ export const List = () => {
       title: 'Games',
       icon: FaGamepad,
       cards: [
-        {
-          key: 210,
-          title: 'The Witcher',
-        },
-        {
-          key: 2221,
-          title: 'Skyrim',
-        },
-        {
-          key: 2521,
-          title: 'Skyrim',
-        },
+        { key: 14, title: 'The Witcher' },
+        { key: 15, title: 'Skyrim' },
       ],
     },
-  ];
+  ]);
+
+  const addColumn = (title: string) => {
+    const newColumn = {
+      key: columns.length ? columns[columns.length - 1].key + 1 : 0,
+      title,
+      icon: FaListAlt,
+      cards: [],
+    };
+
+    setColumns([...columns, newColumn]);
+  };
 
   return (
     <section className={styles.list}>
-      {columns.map(({ key, ...columnData }) => (
-        <Column key={key} {...columnData} />
-      ))}
+      <div className={styles.creator}>
+        <Creator text={'Add new column'} action={addColumn} />
+      </div>
+      <div className={styles.columns}>
+        {columns.map(({ key, ...columnData }) => (
+          <Column key={key} {...columnData} />
+        ))}
+      </div>
     </section>
   );
 };

@@ -6,12 +6,17 @@ interface Props {
   url?: string;
   text?: string;
   disabled?: boolean | null | undefined;
+  onClick?: () => void;
 }
 
-const ButtonPurple = ({ url, text, disabled }: Props) => {
+const ButtonPurple = ({ url, text, disabled, onClick }: Props) => {
   if (!url)
     return (
-      <button className={style.buttonNoUrl} disabled={!!disabled}>
+      <button
+        className={style.buttonNoUrl}
+        disabled={!!disabled}
+        onClick={onClick}
+      >
         {text}
       </button>
     );

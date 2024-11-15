@@ -9,6 +9,7 @@ interface Props {
 
 export const Creator = ({ text, action }: Props) => {
   const [inputVal, setInputVal] = useState('');
+  const [toggle, setToggle] = useState(false);
 
   const handleOK = () => {
     if (inputVal !== '') {
@@ -18,7 +19,8 @@ export const Creator = ({ text, action }: Props) => {
   };
 
   const handleCancel = () => {
-    console.log('handleCancel');
+    setInputVal('');
+    setToggle(false);
   };
 
   return (
@@ -35,6 +37,7 @@ export const Creator = ({ text, action }: Props) => {
         <ButtonDanger buttonName={'OK'} onClick={handleOK} />
         <ButtonPurple text={'cancel'} onClick={handleCancel} />
       </div>
+      {toggle && <div>are you shure</div>}
     </div>
   );
 };

@@ -17,6 +17,7 @@ interface Props {
 
 const Column = ({ title, cards, icon: Icon }: Props) => {
   const [card, setCard] = useState<CardData[]>(cards);
+  const [toggle, setToggle] = useState(false);
 
   const addCard = useCallback(
     (title: string) => {
@@ -26,7 +27,6 @@ const Column = ({ title, cards, icon: Icon }: Props) => {
         title,
       };
 
-      console.log('nowa karta', newCard);
       setCard([...card, newCard]);
     },
     [card]
@@ -34,7 +34,7 @@ const Column = ({ title, cards, icon: Icon }: Props) => {
 
   return (
     <section className={styles.column}>
-      <h3 className={styles.title}>
+      <h3 className={styles.title} onClick={() => setToggle(!toggle)}>
         {title}
         {Icon && (
           <span className={styles.icon}>
@@ -42,10 +42,12 @@ const Column = ({ title, cards, icon: Icon }: Props) => {
           </span>
         )}
       </h3>
-      {card.map(({ key, ...card }) => (
-        <Card key={key} {...card} />
-      ))}
-      <div className={styles.creator}>
+      <div
+        className={`${styles.cardWrap} + ${toggle ? styles.buttonsShown : ''}`}
+      >
+        {card.map(({ key, ...card }) => (
+          <Card key={key} {...card} />
+        ))}
         <Creator text={'Add new card'} action={addCard} />
       </div>
     </section>

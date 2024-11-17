@@ -1,36 +1,42 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch } from '../../../redux/store';
 import { IconType } from 'react-icons';
+import { FaBook, FaCamera, FaGamepad } from 'react-icons/fa';
+import { addCard } from '../../../redux/slices/cardsSlice';
+import { selectCardsByColumn } from '../../../redux/selectores/cardsSelectores';
 import { Card } from '../Card/Card';
 import { Creator } from '../Creator/Creator';
 import styles from './Column.module.scss';
 
-interface CardData {
-  key: number;
-  title: string;
-}
-
 interface Props {
+  id: string;
   title: string;
-  icon?: IconType;
-  cards: CardData[];
+  icon?: string;
 }
 
-const Column = ({ title, cards, icon: Icon }: Props) => {
-  const [card, setCard] = useState<CardData[]>(cards);
+const Column = ({ id, title, icon }: Props) => {
+  const dispatch = useDispatch<AppDispatch>();
+  const cards = useSelector(selectCardsByColumn(id));
+  const iconMap: Record<string, IconType> = {
+    FaBook,
+    FaCamera,
+    FaGamepad,
+  };
+
+  const Icon = iconMap[icon || ''];
+
   const [toggle, setToggle] = useState(false);
 
-  const addCard = useCallback(
-    (title: string) => {
-      console.log('dodaj karte');
-      const newCard = {
-        key: card.length ? card[card.length - 1].key + 1 : 0,
+  const handleAddCart = (title: string) => {
+    dispatch(
+      addCard({
+        id: `card-${Math.random()}`,
+        columnId: id,
         title,
-      };
-
-      setCard([...card, newCard]);
-    },
-    [card]
-  );
+      })
+    );
+  };
 
   return (
     <section className={styles.column}>
@@ -45,10 +51,10 @@ const Column = ({ title, cards, icon: Icon }: Props) => {
       <div
         className={`${styles.cardWrap} + ${toggle ? styles.buttonsShown : ''}`}
       >
-        {card.map(({ key, ...card }) => (
-          <Card key={key} {...card} />
+        {cards.map((card) => (
+          <Card key={card.id} {...card} />
         ))}
-        <Creator text={'Add new card'} action={addCard} />
+        <Creator text={'Add new card'} action={handleAddCart} />
       </div>
     </section>
   );

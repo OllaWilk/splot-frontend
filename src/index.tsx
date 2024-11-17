@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
 
 // Main application component
 import { App } from './App';
 
 // Context providers
 import { MainContextProvider } from './context/mainContext';
+
+// Redux store
+import store from './redux/store';
 
 // External styles
 import './styles/normalize.scss';
@@ -17,8 +21,10 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <MainContextProvider>
-      <App />
-    </MainContextProvider>
+    <Provider store={store}>
+      <MainContextProvider>
+        <App />
+      </MainContextProvider>
+    </Provider>
   </React.StrictMode>
 );

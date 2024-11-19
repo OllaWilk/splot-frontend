@@ -18,14 +18,18 @@
   }
 
   .title {
-    text-align: center;
-    font-size: 1.3rem;
+    @include flex(column, center, center);
+    font-size: 1.4rem;
     padding: 1rem 1rem;
     background-color: var(--color-dark);
     border-radius: 12px 12px;
     @include flex(row, center, center);
     gap: 1rem;
     cursor: pointer;
+
+    svg {
+      font-size: 25px;
+    }
   }
 
   .cardWrap {
@@ -39,4 +43,10 @@
       height: auto;
     }
   }
+}
+
+.count {
+  color: var(--color-dark);
+  padding: 0.5rem 1rem;
+  text-align: center;
 }

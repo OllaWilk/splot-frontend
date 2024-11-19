@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from '../../../redux/store';
 import { IconType } from 'react-icons';
-import { FaBook, FaCamera, FaGamepad } from 'react-icons/fa';
+import { FaBook, FaCamera, FaGamepad, FaIcons } from 'react-icons/fa';
 import { addCard } from '../../../redux/slices/cardsSlice';
 import { selectCardsByColumn } from '../../../redux/selectors/cardsSelectores';
 import { Card } from '../Card/Card';
@@ -17,7 +17,7 @@ interface Props {
 
 const Column = ({ id, title, icon }: Props) => {
   const dispatch = useDispatch<AppDispatch>();
-  const cards = useSelector(selectCardsByColumn(id));
+  const { cards, count } = useSelector(selectCardsByColumn(id));
   const iconMap: Record<string, IconType> = {
     FaBook,
     FaCamera,
@@ -26,17 +26,18 @@ const Column = ({ id, title, icon }: Props) => {
 
   const Icon = iconMap[icon || ''];
 
+  const [toggle, setToggle] = useState(false);
+
   return (
     <section className={styles.column}>
-      <h3 className={styles.title}>
+      <h3 className={styles.title} onClick={() => setToggle(!toggle)}>
+        {Icon ? <Icon /> : <FaIcons />}
         {title}
-        {Icon && (
-          <span className={styles.icon}>
-            <Icon className={styles.icon} />
-          </span>
-        )}
       </h3>
-      <div className={styles.shown}>
+      <p className={styles.count}>({count} items)</p>
+      <div
+        className={`${styles.cardWrap} + ${toggle ? styles.buttonsShown : ''}`}
+      >
         {cards.map((card) => (
           <Card key={card.id} {...card} />
         ))}

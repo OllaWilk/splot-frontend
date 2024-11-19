@@ -2,10 +2,14 @@ import { createSelector } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 import { selectSearchString } from './searchSelector';
 
-//get all Cards
-export const selectAllCards = (state: RootState) => state.cards;
+interface Card {
+  id: string;
+  columnId: string;
+  title: string;
+}
 
-//export const countAllCards
+//get all Cards
+export const selectAllCards = (state: RootState) => state.cards as Card[];
 
 // memoize filtered cards
 export const selectCardsByColumn = (columnId: string) =>
@@ -18,6 +22,6 @@ export const selectCardsByColumn = (columnId: string) =>
           new RegExp(searchString, 'i').test(card.title)
       );
 
-      return filteredCards;
+      return { cards: filteredCards, count: filteredCards.length };
     }
   );

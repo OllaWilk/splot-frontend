@@ -12,7 +12,7 @@ export const Creator = ({ text, action }: Props) => {
   const [toggle, setToggle] = useState(false);
 
   const handleOK = () => {
-    if (inputVal !== '') {
+    if (inputVal.trim()) {
       action(inputVal);
       setInputVal('');
     }

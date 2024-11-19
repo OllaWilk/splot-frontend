@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from '../../../redux/store';
 import { IconType } from 'react-icons';
 import { FaBook, FaCamera, FaGamepad } from 'react-icons/fa';
 import { addCard } from '../../../redux/slices/cardsSlice';
-import { selectCardsByColumn } from '../../../redux/selectores/cardsSelectores';
+import { selectCardsByColumn } from '../../../redux/selectors/cardsSelectores';
 import { Card } from '../Card/Card';
 import { Creator } from '../Creator/Creator';
 import styles from './Column.module.scss';
@@ -26,21 +26,9 @@ const Column = ({ id, title, icon }: Props) => {
 
   const Icon = iconMap[icon || ''];
 
-  const [toggle, setToggle] = useState(false);
-
-  const handleAddCart = (title: string) => {
-    dispatch(
-      addCard({
-        id: `card-${Math.random()}`,
-        columnId: id,
-        title,
-      })
-    );
-  };
-
   return (
     <section className={styles.column}>
-      <h3 className={styles.title} onClick={() => setToggle(!toggle)}>
+      <h3 className={styles.title}>
         {title}
         {Icon && (
           <span className={styles.icon}>
@@ -48,13 +36,21 @@ const Column = ({ id, title, icon }: Props) => {
           </span>
         )}
       </h3>
-      <div
-        className={`${styles.cardWrap} + ${toggle ? styles.buttonsShown : ''}`}
-      >
+      <div className={styles.shown}>
         {cards.map((card) => (
           <Card key={card.id} {...card} />
         ))}
-        <Creator text={'Add new card'} action={handleAddCart} />
+        <Creator
+          text={'Add new card'}
+          action={(title) => {
+            dispatch(
+              addCard({
+                columnId: id,
+                title,
+              })
+            );
+          }}
+        />
       </div>
     </section>
   );

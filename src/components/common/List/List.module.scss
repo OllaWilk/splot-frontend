@@ -10,7 +10,7 @@
 }
 
 .columns {
-  @include flex(row, flex-start, space-between);
+  @include flex(row, flex-start, stretch);
   overflow: auto;
 }
 

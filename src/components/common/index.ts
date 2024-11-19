@@ -20,6 +20,7 @@ export { Navigation } from './Navigation/Navigation';
 export { NoDataAlert } from './NoDataAlert/NoDataAlert';
 export { Paragraph } from './Paragraph/Paragraph';
 export { SearchBar } from './SearchBar/SearchBar';
+export { Search } from './Search/Search';
 export { SectionCart } from './SectionCart/SectionCart';
 export { SectionHeader } from './SectionHeader/SectionHeader';
 export { Spiner } from './Spiner/Spiner';

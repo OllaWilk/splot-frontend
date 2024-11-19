@@ -10,19 +10,15 @@ export const List = () => {
   const dispatch = useDispatch<AppDispatch>();
   const columns = useSelector((state: RootState) => state.columns);
 
-  const handleAddColumn = (title: string) => {
-    dispatch(
-      addColumn({
-        id: `card-${Math.random()}`,
-        title,
-      })
-    );
-  };
-
   return (
     <section className={styles.list}>
       <div className={styles.creator}>
-        <Creator text={'Add new column'} action={handleAddColumn} />
+        <Creator
+          text={'Add new column'}
+          action={(title) => {
+            dispatch(addColumn({ title }));
+          }}
+        />
       </div>
       <div className={styles.columns}>
         {columns.map((column) => (

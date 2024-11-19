@@ -19,8 +19,15 @@ const cardsSlice = createSlice({
   name: 'cards',
   initialState,
   reducers: {
-    addCard: (state, action: PayloadAction<Card>) => {
-      state.push(action.payload);
+    addCard: (
+      state,
+      action: PayloadAction<{ columnId: string; title: string }>
+    ) => {
+      state.push({
+        id: `card-${Math.random()}`,
+        columnId: action.payload.columnId,
+        title: action.payload.title,
+      });
     },
   },
 });

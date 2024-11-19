@@ -30,8 +30,11 @@ const columnsSlice = createSlice({
   name: 'columns',
   initialState,
   reducers: {
-    addColumn: (state, action: PayloadAction<Column>) => {
-      state.push(action.payload);
+    addColumn: (state, action: PayloadAction<{ title: string }>) => {
+      state.push({
+        id: `card-${Math.random()}`,
+        title: action.payload.title,
+      });
     },
   },
 });

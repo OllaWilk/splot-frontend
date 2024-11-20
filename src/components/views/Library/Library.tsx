@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Search, SectionHeader } from '../../../components/common';
+import { Chart, List, Search, SectionHeader } from '../../../components/common';
 import style from './Library.module.scss';
 
 export const Library = () => {
@@ -9,6 +9,7 @@ export const Library = () => {
       <SectionHeader
         text={'Interesting things I want to <sup>read, watch, play!</sup>'}
       />
+      <Chart />
       <List />
     </section>
   );

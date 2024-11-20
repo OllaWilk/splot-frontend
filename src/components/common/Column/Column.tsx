@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch } from '../../../redux/store';
+import { AppDispatch, RootState } from '../../../redux/store';
 import { IconType } from 'react-icons';
 import { FaBook, FaCamera, FaGamepad, FaIcons } from 'react-icons/fa';
 import { addCard } from '../../../redux/slices/cardsSlice';
@@ -16,6 +16,7 @@ interface Props {
 }
 
 const Column = ({ id, title, icon }: Props) => {
+  const search = useSelector((state: RootState) => state.search);
   const dispatch = useDispatch<AppDispatch>();
   const { cards } = useSelector(selectCardsByColumn(id));
   const iconMap: Record<string, IconType> = {
@@ -23,6 +24,8 @@ const Column = ({ id, title, icon }: Props) => {
     FaCamera,
     FaGamepad,
   };
+
+  console.log(search, search.searchString === '');
 
   const Icon = iconMap[icon || ''];
   const [toggle, setToggle] = useState(false);
@@ -34,7 +37,13 @@ const Column = ({ id, title, icon }: Props) => {
         {title}
       </h3>
       <div
-        className={`${styles.cardWrap} + ${toggle ? styles.buttonsShown : ''}`}
+        className={`${styles.cardWrap} ${
+          search.searchString === ''
+            ? toggle
+              ? styles.buttonsShown
+              : ''
+            : styles.buttonsShown
+        }`}
       >
         {cards.map((card) => (
           <Card key={card.id} {...card} />

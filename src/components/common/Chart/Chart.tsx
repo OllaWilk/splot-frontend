@@ -1,38 +1,51 @@
 import React from 'react';
-import styles from './Chart.module.scss';
 import { useSelector } from 'react-redux';
-import { RootState } from 'src/redux/store';
-import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
+import { RootState } from '../../../redux/store';
+import {
+  Bar,
+  BarChart,
+  Legend,
+  ResponsiveContainer,
+  XAxis,
+  YAxis,
+} from 'recharts';
 import { Tooltip } from 'react-leaflet';
-
-interface ChartData {
-  title: string;
-  count: number;
-}
+import { getChartData, tickFormatter } from '../../../utils/chart';
+import styles from './Chart.module.scss';
 
 const Chart = () => {
   const columns = useSelector((state: RootState) => state.columns);
   const cards = useSelector((state: RootState) => state.cards);
 
-  console.log('COLUMNS', columns, 'CARDS', cards);
-
-  const chartData: ChartData[] = columns.map((column) => ({
-    title: column.title,
-    count: cards.filter((card) => card.columnId === column.id).length,
-  }));
-
-  console.log('CHART DATA', chartData);
+  const chartData = getChartData(columns, cards);
 
   return (
     <div className={styles.chart}>
-      {' '}
-      <h2>Items per Category</h2>
-      <ResponsiveContainer width='100%' height={400}>
+      <ResponsiveContainer width='95%' height={450}>
         <BarChart data={chartData}>
-          <XAxis dataKey='title' />
-          <YAxis />
+          <XAxis
+            dataKey='title'
+            label={{
+              position: 'insideBottom',
+              offset: 10,
+              style: { fontSize: '14px' },
+            }}
+            tickFormatter={(title) => tickFormatter(title, columns, cards)}
+            dy={10}
+          />
+          <YAxis
+            allowDecimals={false}
+            label={{
+              value: 'Number of Items in List',
+              angle: -90,
+              position: 'insideLeft',
+              style: { textAnchor: 'middle', fontSize: '14px' },
+            }}
+          />
           <Tooltip />
-          <Bar dataKey='count' fill='#8884d8' />
+          <Bar dataKey='incomplete' fill='#5955b3' name='Incomplete' />
+          <Bar dataKey='completed' fill='#8884d8' name='Completed' />
+          <Legend align='center' verticalAlign='top' />
         </BarChart>
       </ResponsiveContainer>
     </div>

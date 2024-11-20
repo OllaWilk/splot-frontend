@@ -1,9 +1,5 @@
 @import '../../../styles/mixins.scss';
 
-.list {
-  padding: 0 1rem;
-}
-
 .creator {
   width: 33%;
   margin: 2rem auto 0;
@@ -12,6 +8,7 @@
 .columns {
   @include flex(row, flex-start, stretch);
   overflow: auto;
+  padding: 0 17px 17px 17px;
 }
 
 @include md-max {

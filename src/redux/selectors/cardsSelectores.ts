@@ -6,6 +6,7 @@ interface Card {
   id: string;
   columnId: string;
   title: string;
+  completed: boolean;
 }
 
 //get all Cards

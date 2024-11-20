@@ -17,7 +17,7 @@ interface Props {
 
 const Column = ({ id, title, icon }: Props) => {
   const dispatch = useDispatch<AppDispatch>();
-  const { cards, count } = useSelector(selectCardsByColumn(id));
+  const { cards } = useSelector(selectCardsByColumn(id));
   const iconMap: Record<string, IconType> = {
     FaBook,
     FaCamera,
@@ -25,7 +25,6 @@ const Column = ({ id, title, icon }: Props) => {
   };
 
   const Icon = iconMap[icon || ''];
-
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -34,7 +33,6 @@ const Column = ({ id, title, icon }: Props) => {
         {Icon ? <Icon /> : <FaIcons />}
         {title}
       </h3>
-      <p className={styles.count}>({count} items)</p>
       <div
         className={`${styles.cardWrap} + ${toggle ? styles.buttonsShown : ''}`}
       >

@@ -9,8 +9,10 @@ export const Library = () => {
       <SectionHeader
         text={'Interesting things I want to <sup>read, watch, play!</sup>'}
       />
-      <Chart />
-      <List />
+      <div className={style.wrap}>
+        <Chart />
+        <List />
+      </div>
     </section>
   );
 };

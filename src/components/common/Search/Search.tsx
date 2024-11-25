@@ -1,7 +1,6 @@
 import React, { ChangeEvent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectSearchString } from '../../../redux/selectors/searchSelector';
-import { selectFilteredCards } from '../../../redux/selectors/cardsSelectores';
 import { setSearchString } from '../../../redux/slices/searchSlice';
 import { ButtonIcon } from '../Buttons';
 import { SearchResult } from '../SearchResult/SearchResult';
@@ -14,7 +13,6 @@ interface SearchProps {
 export const Search = ({ placeholder = 'Search...' }: SearchProps) => {
   const dispatch = useDispatch();
   const searchString = useSelector(selectSearchString);
-  const findedCards = useSelector(selectFilteredCards);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setSearchString(event.target.value));
@@ -30,9 +28,7 @@ export const Search = ({ placeholder = 'Search...' }: SearchProps) => {
           onChange={handleInputChange}
           placeholder={placeholder}
         />
-        {searchString && findedCards && (
-          <SearchResult findedResults={findedCards} />
-        )}
+        {searchString && <SearchResult />}
       </div>
     </>
   );

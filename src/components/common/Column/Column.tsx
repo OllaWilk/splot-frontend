@@ -4,7 +4,7 @@ import { AppDispatch } from '../../../redux/store';
 import { IconType } from 'react-icons';
 import { FaBook, FaCamera, FaGamepad, FaIcons } from 'react-icons/fa';
 import { addCard } from '../../../redux/slices/cardsSlice';
-import { selectCardsByColumn } from '../../../redux/selectors/cardsSelectores';
+import { selectGroupedCardsByColumn } from '../../../redux/selectors/cardsSelectores';
 import { Card } from '../Card/Card';
 import { Creator } from '../Creator/Creator';
 import styles from './Column.module.scss';
@@ -17,7 +17,8 @@ interface Props {
 
 const Column = ({ id, title, icon }: Props) => {
   const dispatch = useDispatch<AppDispatch>();
-  const { cards } = useSelector(selectCardsByColumn(id));
+  const groupedCards = useSelector(selectGroupedCardsByColumn);
+  const cards = groupedCards[id] || [];
   const iconMap: Record<string, IconType> = {
     FaBook,
     FaCamera,

@@ -4,6 +4,7 @@
   margin: 20px 0 0 0;
   @include flex(row, center, space-between);
   display: flex;
+  flex-wrap: wrap;
   padding: 0 17px;
   gap: 10px;
 

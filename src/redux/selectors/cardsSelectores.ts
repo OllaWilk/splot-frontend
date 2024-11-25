@@ -9,20 +9,23 @@ interface Card {
   completed: boolean;
 }
 
-//get all Cards
-export const selectAllCards = (state: RootState) => state.cards as Card[];
+export const selectAllCards = (state: RootState) => state.cards;
+
+export const selectFilteredCards = createSelector(
+  [selectAllCards, selectSearchString],
+  (cards, searchString) => {
+    return cards.filter((card: Card) =>
+      new RegExp(searchString, 'i').test(card.title)
+    );
+  }
+);
 
 // memoize filtered cards
 export const selectCardsByColumn = (columnId: string) =>
-  createSelector(
-    [selectAllCards, selectSearchString],
-    (cards, searchString) => {
-      const filteredCards = cards.filter(
-        (card) =>
-          card.columnId === columnId &&
-          new RegExp(searchString, 'i').test(card.title)
-      );
+  createSelector([selectFilteredCards], (filteredCards) => {
+    const cardsInColumn = filteredCards.filter(
+      (card: Card) => card.columnId === columnId
+    );
 
-      return { cards: filteredCards, count: filteredCards.length };
-    }
-  );
+    return { cards: cardsInColumn, count: cardsInColumn.length };
+  });

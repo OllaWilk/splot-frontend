@@ -23,7 +23,6 @@ const Column = ({ id, title, icon }: Props) => {
     FaCamera,
     FaGamepad,
   };
-
   const Icon = iconMap[icon || ''];
   const [toggle, setToggle] = useState(false);
 

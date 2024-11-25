@@ -1,23 +1,33 @@
 import React from 'react';
-import style from './SearchResult.module.scss';
+import { useSelector } from 'react-redux';
+import { selectAllColumns } from '../../../redux/selectors/columnsSelector';
+import { selectGroupedCardsByColumn } from '../../../redux/selectors/cardsSelectores';
+import styles from './SearchResult.module.scss';
 
-type Card = {
-  id: string;
-  columnId: string;
-  title: string;
-  completed: boolean;
-};
+export const SearchResult = () => {
+  const groupedCards = useSelector(selectGroupedCardsByColumn);
+  const columns = useSelector(selectAllColumns);
 
-interface Props {
-  findedResults: Card[];
-}
-
-export const SearchResult = ({ findedResults }: Props) => {
   return (
-    <div className={style.searchResult}>
-      {findedResults.map((result) => (
-        <div key={result.id}>{result.title}</div>
-      ))}
+    <div className={styles.searchResult}>
+      {columns.map((column) => {
+        const cards = groupedCards[column.id] || [];
+
+        if (cards.length === 0) return null;
+
+        return (
+          <div key={column.id} className={styles.columnGroup}>
+            <h3 className={styles.columnTitle}>{column.title}</h3>
+            <ul className={styles.cardList}>
+              {cards.map((card) => (
+                <li key={card.id} className={styles.cardItem}>
+                  {card.title}
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      })}
     </div>
   );
 };

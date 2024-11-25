@@ -14,18 +14,22 @@ export const selectAllCards = (state: RootState) => state.cards;
 export const selectFilteredCards = createSelector(
   [selectAllCards, selectSearchString],
   (cards, searchString) => {
+    if (!searchString.trim()) return cards;
     return cards.filter((card: Card) =>
       new RegExp(searchString, 'i').test(card.title)
     );
   }
 );
 
-// memoize filtered cards
-export const selectCardsByColumn = (columnId: string) =>
-  createSelector([selectFilteredCards], (filteredCards) => {
-    const cardsInColumn = filteredCards.filter(
-      (card: Card) => card.columnId === columnId
-    );
-
-    return { cards: cardsInColumn, count: cardsInColumn.length };
-  });
+export const selectGroupedCardsByColumn = createSelector(
+  [selectFilteredCards],
+  (filteredCards) => {
+    return filteredCards.reduce<Record<string, Card[]>>((acc, card) => {
+      if (!acc[card.columnId]) {
+        acc[card.columnId] = [];
+      }
+      acc[card.columnId].push(card);
+      return acc;
+    }, {});
+  }
+);

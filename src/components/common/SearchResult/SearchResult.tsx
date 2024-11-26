@@ -7,27 +7,24 @@ import styles from './SearchResult.module.scss';
 export const SearchResult = () => {
   const groupedCards = useSelector(selectGroupedCardsByColumn);
   const columns = useSelector(selectAllColumns);
+  const filteredColumns = columns.filter(
+    (column) => groupedCards[column.id] && groupedCards[column.id].length > 0
+  );
 
   return (
     <div className={styles.searchResult}>
-      {columns.map((column) => {
-        const cards = groupedCards[column.id] || [];
-
-        if (cards.length === 0) return null;
-
-        return (
-          <div key={column.id} className={styles.columnGroup}>
-            <h3 className={styles.columnTitle}>{column.title}</h3>
-            <ul className={styles.cardList}>
-              {cards.map((card) => (
-                <li key={card.id} className={styles.cardItem}>
-                  {card.title}
-                </li>
-              ))}
-            </ul>
-          </div>
-        );
-      })}
+      {filteredColumns.map((column) => (
+        <div key={column.id} className={styles.columnGroup}>
+          <h3 className={styles.columnTitle}>{column.title}: </h3>
+          <ul className={styles.cardList}>
+            {groupedCards[column.id].map((card) => (
+              <li key={card.id} className={styles.cardItem}>
+                {card.title} /
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
   );
 };

@@ -1,7 +1,8 @@
 @import '../../../styles/mixins.scss';
 
 .creator {
-  width: 33%;
+  @include flex(row, center, center);
+  // width: 33%;
   margin: 2rem auto 0;
 }
 

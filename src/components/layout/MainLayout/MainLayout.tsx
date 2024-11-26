@@ -15,24 +15,22 @@ const MainLayout = () => {
 
   return (
     <div className={styles.layoutWrapper}>
-      <header className={`${styles.navigation} ${isOpen ? styles.open : ''}`}>
+      <header className={styles.navigation}>
         <button className={styles.toggleButton} onClick={toggleNavigation}>
           {!isOpen ? (
             <div>
               <RxHamburgerMenu />
-              <p>Menu</p>
             </div>
           ) : (
             <div>
               <IoClose />
-              <p>Menu</p>
             </div>
           )}
         </button>
         <Link to={'/cockpit'} className={styles.logoWrap}>
           <Logo text={'SplotApp'} slogan={false} />
         </Link>
-        <Navigation toggleNavigation={toggleNavigation} />
+        <Navigation toggleNavigation={toggleNavigation} isOpen={isOpen} />
         <ButtonLogout />
       </header>
       <section className={styles.cockpit}>

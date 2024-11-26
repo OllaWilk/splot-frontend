@@ -22,6 +22,7 @@ export { NoDataAlert } from './NoDataAlert/NoDataAlert';
 export { Paragraph } from './Paragraph/Paragraph';
 export { SearchBar } from './SearchBar/SearchBar';
 export { Search } from './Search/Search';
+export { SearchResult } from './SearchResult/SearchResult';
 export { SectionCart } from './SectionCart/SectionCart';
 export { SectionHeader } from './SectionHeader/SectionHeader';
 export { Spiner } from './Spiner/Spiner';

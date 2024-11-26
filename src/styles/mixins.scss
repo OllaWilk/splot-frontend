@@ -7,7 +7,7 @@
 }
 
 @mixin shadow {
-  box-shadow: 20px 24px 25px 0px rgba(160, 160, 160, 0.4);
+  box-shadow: 20px 24px 25px 0px rgba(5, 5, 5, 0.4);
 }
 
 @mixin img {
@@ -93,4 +93,11 @@
   @media screen and (min-width: 1200px) {
     @content;
   }
+}
+
+@mixin dropdown {
+  opacity: 0;
+  height: 0;
+  max-height: 0;
+  overflow: hidden;
 }

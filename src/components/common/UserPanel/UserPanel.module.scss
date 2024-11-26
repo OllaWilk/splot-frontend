@@ -15,10 +15,6 @@
     top: 100px;
   }
 
-  @include md-max {
-    top: 20px;
-  }
-
   @include sm-max {
     top: 0px;
     right: 0;

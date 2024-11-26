@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../../redux/store';
+import { selectAllCards } from '../../../redux/selectors/cardsSelectores';
+import { selectAllColumns } from '../../../redux/selectors/columnsSelector';
 import {
   Bar,
   BarChart,
@@ -14,8 +15,8 @@ import { getChartData, tickFormatter } from '../../../utils/chart';
 import styles from './Chart.module.scss';
 
 const Chart = () => {
-  const columns = useSelector((state: RootState) => state.columns);
-  const cards = useSelector((state: RootState) => state.cards);
+  const columns = useSelector(selectAllColumns);
+  const cards = useSelector(selectAllCards);
 
   const chartData = getChartData(columns, cards);
 

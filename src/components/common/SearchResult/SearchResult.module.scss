@@ -1,0 +1,37 @@
+@import '../../../styles/mixins.scss';
+
+.searchResult {
+  @include dropdown;
+  padding: 0;
+  width: calc(100% - 60px);
+  right: 0;
+  max-height: 0;
+
+  .columnGroup {
+    @include flex(row, center, flex-start);
+    gap: 20px;
+  }
+
+  .cardList {
+    @include flex(row, center, flex-start);
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  &.shown {
+    transform-origin: center top;
+    transform: scaleY(1);
+    opacity: 1;
+    max-height: 90vh;
+    height: auto;
+    position: absolute;
+    background-color: var(--color-light);
+    z-index: 999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    border: 1px solid var(--color-dark-grey);
+    border-radius: 4px;
+    padding: 10px 1rem;
+    transition: transform 200ms linear, opacity 200ms linear;
+  }
+}

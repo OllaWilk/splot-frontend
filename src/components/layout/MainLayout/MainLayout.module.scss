@@ -4,7 +4,7 @@
   position: fixed;
   left: 0;
   width: 250px;
-  height: 120svh;
+  height: 100vh;
   background-color: var(--color-dark);
   padding: 17px 0;
   transition: transform 0.3s ease-in-out;
@@ -15,46 +15,22 @@
     top: 0;
     width: 100%;
     height: auto;
-    padding: 0 20px;
+    padding: 10px 20px;
     @include flex(row, center, space-between);
-  }
-
-  @include md-max {
-    height: 100vh;
-    @include flex(column, flex-start, center);
     flex-wrap: wrap;
-    transform: translateY(90vh);
-    gap: 20px;
-    z-index: 9999;
-    width: 100%;
-
-    &.open {
-      transform: translateY(0);
-    }
   }
 }
 
 .toggleButton {
   display: none;
-  position: absolute;
-  border: none;
-  top: 0px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  background-color: var(--color-dark);
-  color: var(--color-light);
-  cursor: pointer;
-  z-index: 99999;
-  font-size: 1.5rem;
-  height: 10vh;
 
-  @include md-max {
-    @include flex(row, center, center);
-  }
-
-  &:hover {
-    color: var(--color-primary);
+  @include lg-max {
+    display: block;
+    border: none;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    cursor: pointer;
+    font-size: 1.5rem;
   }
 
   div {
@@ -78,6 +54,10 @@
   @include lg-max {
     margin: 0;
   }
+
+  @include sm-max {
+    display: none;
+  }
 }
 
 .cockpit {
@@ -91,10 +71,6 @@
     margin-left: 0;
     width: 100%;
     padding-top: 97px;
-  }
-
-  @include md-max {
-    padding-top: 17px;
   }
 }
 

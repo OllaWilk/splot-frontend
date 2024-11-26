@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState, AppDispatch } from '../../../redux/store';
+import { AppDispatch } from '../../../redux/store';
+import { selectAllColumns } from '../../../redux/selectors/columnsSelector';
 import { addColumn } from '../../../redux/slices/columnSlice';
 import { Creator } from '../Creator/Creator';
 import { Column } from '../Column/Column';
@@ -8,7 +9,7 @@ import styles from './List.module.scss';
 
 export const List = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const columns = useSelector((state: RootState) => state.columns);
+  const columns = useSelector(selectAllColumns);
 
   return (
     <section className={styles.list}>

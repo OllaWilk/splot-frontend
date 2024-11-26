@@ -27,9 +27,5 @@
     @include lg-max {
       display: none;
     }
-
-    @include md-max {
-      display: block;
-    }
   }
 }

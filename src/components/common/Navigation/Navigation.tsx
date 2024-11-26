@@ -9,9 +9,10 @@ import style from './Navigation.module.scss';
 
 interface Props {
   toggleNavigation: () => void;
+  isOpen: boolean;
 }
 
-const Navigation = ({ toggleNavigation }: Props) => {
+const Navigation = ({ toggleNavigation, isOpen }: Props) => {
   const navigation = [
     { name: 'Cockpit', path: 'cockpit', icon: <FaStar /> },
     { name: 'Library', path: 'library', icon: <IoLibrary /> },
@@ -21,7 +22,7 @@ const Navigation = ({ toggleNavigation }: Props) => {
   ];
 
   return (
-    <nav className={style.component}>
+    <nav className={`${style.component} ${isOpen ? style.open : style.close}`}>
       {navigation.map((item) => (
         <NavLink
           key={item.name}

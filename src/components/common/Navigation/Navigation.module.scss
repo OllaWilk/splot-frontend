@@ -8,20 +8,38 @@
   border-bottom: 1px solid var(--color-main);
   z-index: 99999;
   word-break: break-all;
+  transition: max-height 200ms ease, padding 200ms ease, transform 200ms ease;
 
   @include lg-max {
-    @include flex(row, center, center);
-    padding: 10px 0;
-    width: auto;
-    flex-wrap: wrap;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-dark);
     border-bottom: none;
-  }
+    @include shadow;
+    overflow: hidden;
 
-  @include md-max {
-    @include flex(column, stretch, space-around);
-    gap: 20px;
-    width: 100%;
-    border-bottom: 1px solid var(--color-main);
+    &.open {
+      max-height: 500px;
+      opacity: 1;
+
+      @include sm-max {
+        height: 100vh;
+        max-height: 100vh;
+      }
+    }
+
+    &.close {
+      height: 0;
+      padding: 0;
+      z-index: -9999;
+
+      > * {
+        height: 0;
+        opacity: 0;
+      }
+    }
   }
 
   a {
@@ -33,42 +51,20 @@
     color: var(--color-light);
     transition: 0.3s ease;
 
-    @include lg-max {
-      padding: 0 15px;
-    }
-
     &:hover {
       background-color: lighten($color: #080808, $amount: 5%);
       border-left: 5px solid var(--color-main);
-
-      @include lg-max {
-        border-left: none;
-      }
     }
 
     &.active {
       background-color: lighten($color: #080808, $amount: 10%);
       border-bottom: none;
-
-      @include lg-max {
-        border-bottom: 2px solid var(--color-main);
-      }
-
-      @include md-max {
-        border-left: 5px solid var(--color-main);
-        border-bottom: none;
-      }
     }
   }
 
   .navLink {
     width: 100%;
     text-align: left;
-
-    @include lg-max {
-      width: auto;
-      text-align: center;
-    }
   }
 
   .mark {

@@ -7,6 +7,11 @@ interface Card {
   columnId: string;
   title: string;
   completed: boolean;
+  description?: string;
+  author?: string;
+  year?: number;
+  purcheseLink?: string;
+  notes?: string;
 }
 
 export const selectAllCards = (state: RootState) => state.cards;
@@ -32,4 +37,9 @@ export const selectGroupedCardsByColumn = createSelector(
       return acc;
     }, {});
   }
+);
+
+export const selectCardById = createSelector(
+  [selectAllCards, (_, cardId: string) => cardId],
+  (cards, cardId) => cards.find((card) => card.id === cardId) || null
 );

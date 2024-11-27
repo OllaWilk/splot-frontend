@@ -1,0 +1,96 @@
+.cardDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+
+  .description {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 12px;
+
+    strong {
+      font-weight: 600;
+      color: #111;
+    }
+  }
+
+  .otherInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+
+    p {
+      margin: 0;
+      font-size: 15px;
+
+      strong {
+        font-weight: 600;
+        color: #111;
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+
+    .actionButton {
+      padding: 10px 16px;
+      background-color: #6200ea;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #3700b3;
+      }
+    }
+  }
+}
+
+.statusCompleted {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.statusPending {
+  color: #f44336;
+  font-weight: bold;
+}
+
+.purchaseLink {
+  color: #6200ea;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 50vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}

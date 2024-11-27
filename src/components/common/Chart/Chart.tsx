@@ -37,7 +37,6 @@ const Chart = () => {
           <YAxis
             allowDecimals={false}
             label={{
-              value: 'Number of Items in List',
               angle: -90,
               position: 'insideLeft',
               style: { textAnchor: 'middle', fontSize: '14px' },

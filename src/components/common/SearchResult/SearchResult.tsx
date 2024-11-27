@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { selectAllColumns } from '../../../redux/selectors/columnsSelector';
 import { selectGroupedCardsByColumn } from '../../../redux/selectors/cardsSelectores';
 import styles from './SearchResult.module.scss';
@@ -15,8 +16,6 @@ export const SearchResult = ({ searchString }: Props) => {
     (column) => groupedCards[column.id] && groupedCards[column.id].length > 0
   );
 
-  console.log(filteredColumns.length);
-
   return (
     <div
       className={`${styles.searchResult} ${searchString ? styles.shown : ''}`}
@@ -27,9 +26,13 @@ export const SearchResult = ({ searchString }: Props) => {
             <h3 className={styles.columnTitle}>{column.title}: </h3>
             <ul className={styles.cardList}>
               {groupedCards[column.id].map((card) => (
-                <li key={card.id} className={styles.cardItem}>
+                <Link
+                  to={`/library/card/${card.id}`}
+                  key={card.id}
+                  className={styles.cardItem}
+                >
                   {card.title}
-                </li>
+                </Link>
               ))}
             </ul>
           </div>

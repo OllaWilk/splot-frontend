@@ -11,6 +11,7 @@ import {
   Login,
   Signup,
   Library,
+  CardDetail,
 } from './components/views';
 import { MainLayout } from './components/layout';
 import { Footer, MyPortfolio } from './components/common';
@@ -36,6 +37,7 @@ function App() {
           <Route element={<MainLayout />}>
             <Route path='/cockpit' element={<Cockpit />} />
             <Route path='/library' element={<Library />} />
+            <Route path='/library/card/:cardId' element={<CardDetail />} />
             <Route path='/events/:id' element={<Event />} />
             <Route path='/info' element={<Info />} />
             <Route path='/AleksandraWilk' element={<About />} />

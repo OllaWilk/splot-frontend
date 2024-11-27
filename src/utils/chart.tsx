@@ -15,6 +15,11 @@ interface Card {
   columnId: string;
   title: string;
   completed: boolean;
+  description?: string;
+  author?: string;
+  year?: number;
+  purcheseLink?: string;
+  notes?: string;
 }
 
 export const getChartData = (columns: Column[], cards: Card[]): ChartData[] =>

@@ -34,8 +34,8 @@ export const EventsList = ({ toggleIsOpen }: Props) => {
     return (
       <>
         <ButtonAddEvent toggleIsOpen={toggleIsOpen} />
-        <NoDataAlert message='No events to display' />; // If events is
-        undefined, show a no data alert
+        <NoDataAlert message='Loading...' />; // If events is undefined, show a
+        no data alert
       </>
     );
   } else if (events.length === 0) {
@@ -46,7 +46,7 @@ export const EventsList = ({ toggleIsOpen }: Props) => {
       </div>
     );
   } else if (events === null) {
-    return <NoDataAlert message='Event not found' />; // If events is null, show a different no data alert
+    return <NoDataAlert message='Loading...' />; // If events is null, show a different no data alert
   }
 
   // Render the list of events

@@ -42,24 +42,6 @@
   }
 }
 
-.logoWrap {
-  img {
-    height: 55px;
-  }
-
-  h1 {
-    font-size: 25px;
-  }
-
-  @include lg-max {
-    margin: 0;
-  }
-
-  @include sm-max {
-    display: none;
-  }
-}
-
 .cockpit {
   flex: 1;
   margin-left: 250px;

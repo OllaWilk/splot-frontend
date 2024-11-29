@@ -1,28 +1,9 @@
-interface ChartData {
-  title: string;
-  completed: number;
-  incomplete: number;
-}
+import { Column, ChartData, CardBase, Card } from '@alexwilk/spacesteps-types';
 
-interface Column {
-  id: string;
-  title: string;
-  icon?: string;
-}
-
-interface Card {
-  id: string;
-  columnId: string;
-  title: string;
-  completed: boolean;
-  description?: string;
-  author?: string;
-  year?: number;
-  purcheseLink?: string;
-  notes?: string;
-}
-
-export const getChartData = (columns: Column[], cards: Card[]): ChartData[] =>
+export const getChartDataBase = (
+  columns: Column[],
+  cards: Card[]
+): ChartData[] =>
   columns.map((column) => {
     const columnCards = cards.filter((card) => card.columnId === column.id);
     return {
@@ -35,7 +16,7 @@ export const getChartData = (columns: Column[], cards: Card[]): ChartData[] =>
 export const tickFormatter = (
   title: string,
   columns: Column[],
-  cards: Card[]
+  cards: CardBase[]
 ): string => {
   const column = columns.find((col) => title === col.title);
   const cardCount = cards.filter((card) => card.columnId === column?.id).length;

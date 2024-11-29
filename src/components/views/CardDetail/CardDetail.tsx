@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card } from '@alexwilk/spacesteps-types';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../redux/store';
 import { selectCardById } from '../../../redux/selectors/cardsSelectores';
@@ -11,8 +12,8 @@ import styles from './CardDetail.module.scss';
 export const CardDetail = () => {
   const { cardId } = useParams();
 
-  const card = useSelector((state: RootState) =>
-    selectCardById(state, cardId || '')
+  const card: Card | null = useSelector((state: RootState) =>
+    cardId ? selectCardById(state, cardId) : null
   );
 
   if (!card)
@@ -57,12 +58,12 @@ export const CardDetail = () => {
           </div>
           <p>
             <strong>Purchase Link:</strong>{' '}
-            {card.purchaseLink ? (
+            {card.purcheseLink ? (
               <a
-                href={card.purchaseLink}
+                href={card.purcheseLink}
                 target='_blank'
                 rel='noopener noreferrer'
-                className={styles.purchaseLink}
+                className={styles.purcheseLink}
               >
                 Buy here
               </a>

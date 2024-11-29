@@ -11,7 +11,7 @@ export const Card = ({ title, id }: Props) => {
   return (
     <Link to={`/library/card/${id}`} className={styles.card}>
       <h3 className={styles.titleCard}> {title}</h3>
-      <span className={styles.deleteIcon}>X</span>
+      {/* <span className={styles.deleteIcon}>X</span> */}
     </Link>
   );
 };

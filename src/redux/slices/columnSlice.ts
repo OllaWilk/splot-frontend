@@ -1,10 +1,5 @@
+import { Column } from '@alexwilk/spacesteps-types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-interface Column {
-  id: string;
-  title: string;
-  icon?: string;
-}
 
 const initialState: Column[] = [
   {

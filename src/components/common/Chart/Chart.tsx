@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectAllCards } from '../../../redux/selectors/cardsSelectores';
+import { selectCardsAsBase } from '../../../redux/selectors/cardsSelectores';
 import { selectAllColumns } from '../../../redux/selectors/columnsSelector';
 import {
   Bar,
@@ -11,14 +11,14 @@ import {
   YAxis,
 } from 'recharts';
 import { Tooltip } from 'react-leaflet';
-import { getChartData, tickFormatter } from '../../../utils/chart';
+import { getChartDataBase, tickFormatter } from '../../../utils/chart';
 import styles from './Chart.module.scss';
 
 const Chart = () => {
   const columns = useSelector(selectAllColumns);
-  const cards = useSelector(selectAllCards);
+  const cards = useSelector(selectCardsAsBase);
 
-  const chartData = getChartData(columns, cards);
+  const chartData = getChartDataBase(columns, cards);
 
   return (
     <div className={styles.chart}>

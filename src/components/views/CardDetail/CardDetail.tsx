@@ -6,7 +6,7 @@ import { selectCardById } from '../../../redux/selectors/cardsSelectores';
 import { useParams } from 'react-router-dom';
 import { purpleSpace } from '../../../images/index';
 import { NotFound } from '../NotFound/NotFound';
-import { SectionHeader } from '../../common';
+import { ButtonBlack, Paragraph, SectionHeader } from '../../common';
 import styles from './CardDetail.module.scss';
 
 export const CardDetail = () => {
@@ -21,57 +21,50 @@ export const CardDetail = () => {
       <NotFound message={'The  card does not exist or has been removed'} />
     );
 
+  const displayKeys = [
+    'description',
+    'author',
+    'year',
+    'completed',
+    'notes',
+    'purcheseLink',
+  ];
+
+  const renderValue = (key: string) => {
+    const value = card[key as keyof Card];
+    switch (key) {
+      case 'completed':
+        return (
+          <span
+            className={value ? styles.statusCompleted : styles.statusPending}
+          >
+            {value ? 'Yes' : 'No'}
+          </span>
+        );
+      case 'purcheseLink':
+        return value ? (
+          <ButtonBlack dynamicPath={value as string} buttonName={'Buy here'} />
+        ) : (
+          'Not available.'
+        );
+      default:
+        return <Paragraph text={`${value || 'N/A'}`} />;
+    }
+  };
+
   return (
-    <div className={styles.container}>
-      <div className={styles.imageContainer}>
+    <div className={styles.cardInfo}>
+      <div className={styles.imageWrap}>
         <img className={styles.image} src={purpleSpace} alt={card.title} />
       </div>
-      <div className={styles.cardDetails}>
+      <div className={styles.details}>
         <SectionHeader text={`${card.title}`} />
-        <div className={styles.cardInfo}>
-          <p>
-            <strong>Description:</strong>{' '}
-            {card.description || 'No description available.'}
-          </p>
-          <div className={styles.detailsRow}>
-            <p>
-              <strong>Author:</strong> {card.author || 'Unknown'}
-            </p>
-            <p>
-              <strong>Year:</strong> {card.year || 'N/A'}
-            </p>
+        {displayKeys.map((key) => (
+          <div key={key} className={styles.description}>
+            <strong>{key.charAt(0).toUpperCase() + key.slice(1)}:</strong>
+            {renderValue(key)}
           </div>
-          <div className={styles.detailsRow}>
-            <p>
-              <strong>Completed:</strong>{' '}
-              <span
-                className={
-                  card.completed ? styles.statusCompleted : styles.statusPending
-                }
-              >
-                {card.completed ? 'Yes' : 'No'}
-              </span>
-            </p>
-            <p>
-              <strong>Notes:</strong> {card.notes || 'No notes added.'}
-            </p>
-          </div>
-          <p>
-            <strong>Purchase Link:</strong>{' '}
-            {card.purcheseLink ? (
-              <a
-                href={card.purcheseLink}
-                target='_blank'
-                rel='noopener noreferrer'
-                className={styles.purcheseLink}
-              >
-                Buy here
-              </a>
-            ) : (
-              'Not available.'
-            )}
-          </p>
-        </div>
+        ))}
       </div>
     </div>
   );

@@ -10,12 +10,38 @@ Welcome to the repository of my feature-rich application! Below is a detailed br
 * MySQL – designing and managing the database.
 * RESTful APIs – designing and implementing API interfaces.
 * UX/UI Design – creating a user-friendly and intuitive interface.
-## 🙋🏼‍♀️ Live demo:
+## 🙋🏼‍♀️ Live demo: 🚧 Live demo temporarily unavailable (hosting expired). The repository contains full instructions for running it locally.
+
+## Installation project
+
+**Clone the project:**
+
+```
+git clone https://github.com/OllaWilk/splot-frontend.git
+```
+
+**Go to the project directory:**
+
+```
+cd splot-frontend
+```
+
+**Install dependencies:**
+
+```
+npm install
+```
+
+**Start the server:**
+
+```
+npm start
+```
+
+
 
 [![Watch Demo Video](screenshots/welcome.png)](https://www.splotapp.eu)
-
 ### 🔑 **Login**: alex.dev.wilk@gmail.com
-
 ### 🔒 **Password**: AlexDev1!
 
 ##### Home Page:
@@ -129,28 +155,4 @@ Users cannot access the application while logged out, ensuring data security. Ad
 ![Blender](https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge&logo=blender&logoColor=white)
 ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
 
-## 🦋 Installation project
 
-**Clone the project:**
-
-```
-git clone https://github.com/OllaWilk/splot-frontend.git
-```
-
-**Go to the project directory:**
-
-```
-cd splot-frontend
-```
-
-**Install dependencies:**
-
-```
-npm install
-```
-
-**Start the server:**
-
-```
-npm start
-```
